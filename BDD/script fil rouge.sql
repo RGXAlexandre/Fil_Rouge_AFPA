@@ -8,6 +8,7 @@ CREATE TABLE Rubrique(
    rub_id MEDIUMINT AUTO_INCREMENT,
    rub_nom VARCHAR(50) NOT NULL,
    rub_libelle VARCHAR(250),
+   rub_photo VARCHAR(254),
    rub_id_1 MEDIUMINT,
    PRIMARY KEY(rub_id),
    FOREIGN KEY(rub_id_1) REFERENCES Rubrique(rub_id)
@@ -95,7 +96,7 @@ CREATE TABLE Produit(
    pro_libelle_court VARCHAR(60) NOT NULL,
    pro_libelle_long VARCHAR(300),
    pro_prix_achat DECIMAL(13,4) NOT NULL,
-   pro_photo VARCHAR(150),
+   pro_photo VARCHAR(254),
    pro_rub_id MEDIUMINT,
    pro_emp_id MEDIUMINT,
    pro_fou_id MEDIUMINT NOT NULL,   
@@ -170,22 +171,22 @@ IDENTIFIED BY 'gestion';
 GRANT ALL PRIVILEGES ON fil_rouge.`*`
 TO 'administrateur' IDENTIFIED BY 'administrateur';
 
-insert INTO `client` (cli_id, cli_nom, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone, cli_coefficient) VALUES (1, 'Yurtsev', 'Maëly', '4588 Summit Junction', '94254 CEDEX', 'Gentilly', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'),'276-47-8726', 3);
-insert into client (cli_nom, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone, cli_coefficient) values ('Swanborrow', 'Östen', '7 Vermont Road', '82037 CEDEX', 'Montauban', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '865-81-0304', 3);
-insert into client (cli_nom, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Bes', 'Anaëlle', '19 Bowman Junction', '74041 CEDEX', 'Annecy', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '280-83-8709');
-insert into client (cli_nom, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Tolumello', 'Anaël', '576 Scoville Trail', '54046 CEDEX', 'Nancy', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '642-92-9923');
-insert into client (cli_nom, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Salsberg', 'Michèle', '89 Pearson Point', '78897 CEDEX', 'Saint-Quentin-en-Yvelines', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '745-23-9796');
-insert into client (cli_nom, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Loftus', 'Kévina', '690 Steensland Junction', '94414 CEDEX', 'Saint-Maurice', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '119-03-7753');
-insert into client (cli_nom, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Linfitt', 'Océane', '72 Nelson Street', '84304 CEDEX', 'Cavaillon', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '168-87-1106');
-insert into client (cli_nom, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Loch', 'Gaïa', '916 Corben Place', '13253 CEDEX 06', 'Marseille', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '791-84-2097');
-insert into client (cli_nom, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Laverock', 'Loïc', '0136 Eastlawn Lane', '77794 CEDEX', 'Nemours', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '200-12-2825');
-insert into client (cli_nom, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Vassman', 'Zhì', '2673 Warrior Parkway', '14654 CEDEX', 'Carpiquet', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '218-95-0963');
-insert into client (cli_nom, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Winspar', 'Stévina', '4 Bluejay Terrace', '94525 CEDEX 1', 'Rungis', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '275-52-7061');
-insert into client (cli_nom, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Papachristophorou', 'Daphnée', '4152 Logan Point', '89102 CEDEX', 'Sens', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '501-40-4761');
-insert into client (cli_nom, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Orknay', 'Maï', '914 Evergreen Plaza', '95761 CEDEX 1', 'Roissy Charles-de-Gaulle', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '542-30-0982');
-insert into client (cli_nom, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Dwire', 'Mégane', '44258 Pleasure Crossing', '77414 CEDEX', 'Claye-Souilly', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '179-04-9808');
-insert into client (cli_nom, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Boscott', 'Pò', '6135 Kropf Pass', '75976 CEDEX 20', 'Paris 20', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '523-65-0245');
-insert into client (cli_nom, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Duester', 'Sélène', '06804 Delaware Point', '01069 CEDEX 9', 'Bourg-en-Bresse', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '517-82-7525');
+insert INTO `client` (cli_id, cli_nom, cli_password, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone, cli_coefficient) VALUES (1, 'Yurtsev', 'Yurtsev', 'Maëly', '4588 Summit Junction', '94254 CEDEX', 'Gentilly', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'),'276-47-8726', 3);
+insert into client (cli_nom, cli_password, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone, cli_coefficient) values ('Swanborrow', 'Swanborrow', 'Östen', '7 Vermont Road', '82037 CEDEX', 'Montauban', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '865-81-0304', 3);
+insert into client (cli_nom, cli_password, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Bes','Bes', 'Anaëlle', '19 Bowman Junction', '74041 CEDEX', 'Annecy', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '280-83-8709');
+insert into client (cli_nom, cli_password, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Tolumello','Tolumello', 'Anaël', '576 Scoville Trail', '54046 CEDEX', 'Nancy', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '642-92-9923');
+insert into client (cli_nom, cli_password, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Salsberg','Salsberg', 'Michèle', '89 Pearson Point', '78897 CEDEX', 'Saint-Quentin-en-Yvelines', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '745-23-9796');
+insert into client (cli_nom, cli_password, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Loftus','Loftus', 'Kévina', '690 Steensland Junction', '94414 CEDEX', 'Saint-Maurice', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '119-03-7753');
+insert into client (cli_nom, cli_password, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Linfitt','Linfitt', 'Océane', '72 Nelson Street', '84304 CEDEX', 'Cavaillon', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '168-87-1106');
+insert into client (cli_nom, cli_password, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Loch','Loch', 'Gaïa', '916 Corben Place', '13253 CEDEX 06', 'Marseille', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '791-84-2097');
+insert into client (cli_nom, cli_password, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Laverock','Laverock', 'Loïc', '0136 Eastlawn Lane', '77794 CEDEX', 'Nemours', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '200-12-2825');
+insert into client (cli_nom, cli_password, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Vassman','Vassman', 'Zhì', '2673 Warrior Parkway', '14654 CEDEX', 'Carpiquet', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '218-95-0963');
+insert into client (cli_nom, cli_password, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Winspar','Winspar', 'Stévina', '4 Bluejay Terrace', '94525 CEDEX 1', 'Rungis', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '275-52-7061');
+insert into client (cli_nom, cli_password, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Papachristophorou','Papachristophorou', 'Daphnée', '4152 Logan Point', '89102 CEDEX', 'Sens', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '501-40-4761');
+insert into client (cli_nom, cli_password, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Orknay','Orknay', 'Maï', '914 Evergreen Plaza', '95761 CEDEX 1', 'Roissy Charles-de-Gaulle', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '542-30-0982');
+insert into client (cli_nom, cli_password, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Dwire','Dwire', 'Mégane', '44258 Pleasure Crossing', '77414 CEDEX', 'Claye-Souilly', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '179-04-9808');
+insert into client (cli_nom, cli_password, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Boscott','Boscott', 'Pò', '6135 Kropf Pass', '75976 CEDEX 20', 'Paris 20', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '523-65-0245');
+insert into client (cli_nom, cli_password, cli_prenom, cli_rue, cli_code_postal, cli_ville, cli_pays, cli_mail, cli_telephone) values ('Duester','Duester', 'Sélène', '06804 Delaware Point', '01069 CEDEX 9', 'Bourg-en-Bresse', 'France', concat(substring(cli_prenom,1,3),'.',cli_nom,'@mail.com'), '517-82-7525');
 
 
 UPDATE `client` SET cli_statut='professionel', cli_coefficient=2 WHERE cli_id=1;
@@ -208,51 +209,82 @@ insert into fournisseur (fou_id, fou_nom, fou_rue, fou_code_postal, fou_ville, f
 insert into fournisseur (fou_id, fou_nom, fou_rue, fou_code_postal, fou_ville, fou_pays) VALUES (6, 'Voomm', '04 Heath Street', '37205 CEDEX 3', 'Tours', 'France');
 insert into fournisseur (fou_id, fou_nom, fou_rue, fou_code_postal, fou_ville, fou_pays) VALUES (7, 'SML Accessoires', '51 rue de l''anis', '13051', 'Pastaga', 'France');
 
-insert into employé (emp_prenom, emp_nom) values ('Celestyna', 'Stenbridge');
-insert into employé (emp_prenom, emp_nom) values ('Jermaine', 'Pasek');
-insert into employé (emp_prenom, emp_nom) values ('Lian', 'Kolyagin');
-insert into employé (emp_prenom, emp_nom) values ('Jobina', 'MacTrustey');
-insert into employé (emp_prenom, emp_nom) values ('Sayers', 'Hugo');
-insert into employé (emp_prenom, emp_nom) values ('Nataniel', 'Liddel');
-insert into employé (emp_prenom, emp_nom) values ('Vergil', 'Torricina');
-insert into employé (emp_prenom, emp_nom) values ('Krisha', 'Folcarelli');
-insert into employé (emp_prenom, emp_nom) values ('Yvette', 'Burrows');
-insert into employé (emp_prenom, emp_nom) values ('Dory', 'Maso');
-insert into employé (emp_prenom, emp_nom) values ('Pattin', 'Whalley');
-insert into employé (emp_prenom, emp_nom) values ('Giovanni', 'Berr');
+insert into employé (emp_prenom, emp_nom, emp_password) values ('Celestyna', 'Stenbridge', 'Stenbridge');
+insert into employé (emp_prenom, emp_nom, emp_password) values ('Jermaine', 'Pasek', 'Pasek');
+insert into employé (emp_prenom, emp_nom, emp_password) values ('Lian', 'Kolyagin', 'Kolyagin');
+insert into employé (emp_prenom, emp_nom, emp_password) values ('Jobina', 'MacTrustey', 'MacTrustey');
+insert into employé (emp_prenom, emp_nom, emp_password) values ('Sayers', 'Hugo', 'Hugo');
+insert into employé (emp_prenom, emp_nom, emp_password) values ('Nataniel', 'Liddel', 'Liddel');
+insert into employé (emp_prenom, emp_nom, emp_password) values ('Vergil', 'Torricina', 'Torricina');
+insert into employé (emp_prenom, emp_nom, emp_password) values ('Krisha', 'Folcarelli', 'Folcarelli');
+insert into employé (emp_prenom, emp_nom, emp_password) values ('Yvette', 'Burrows', 'Burrows');
+insert into employé (emp_prenom, emp_nom, emp_password) values ('Dory', 'Maso', 'Maso');
+insert into employé (emp_prenom, emp_nom, emp_password) values ('Pattin', 'Whalley', 'Whalley');
+insert into employé (emp_prenom, emp_nom, emp_password) values ('Giovanni', 'Berr', 'Berr');
 
 
 
-INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1) VALUES (1, 'les instruments à vents', 'toute la panoplie des instruments à vents ainsi que leurs accessoires sont à votre disposition ici!!', NULL);
-INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1) VALUES	(2,'les bois','toute la panoplie des bois', 1);
-INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1) VALUES	(3,'les cuivres','toute la panoplie des cuivres', 1);
-INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1) VALUES	(4,'les accessoires','toute la panoplie pour entrenir votre matériel !!', 1);
-INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1) VALUES	(5,'les saxophones','toute la panoplie de nos saxophones !!', 2);
-INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1) VALUES	(6,'les clarinettes','toute la panoplie de nos plus belles clarinettes !!', 2);
-INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1) VALUES	(7,'les flûtes','toute la panoplie de nos plus belles flûtes avec en exclusivité nos plus beaux pipeaux !!', 2);
-INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1) VALUES	(8,'les trompettes','toute la panoplie de nos plus belles trompettes !!', 3);
-INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1) VALUES	(9,'les trombonnes','toute la panoplie de nos plus beaux trombones !!', 3);
-INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1) VALUES	(10,'les gros cuivres','toute la panoplie de nos plus beaux gros cuivres !!', 3);
-INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1) VALUES	(11,'les becs','toute la panoplie de nos plus beaux gros cuivres !!', 4);
-INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1) VALUES	(12,'les embouchures','toute la panoplie de nos plus beaux gros cuivres !!', 4);
+INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES (1, 'les instruments à vents', 'toute la panoplie des instruments à vents ainsi que leurs accessoires sont à votre disposition ici!!', NULL, 'rubrique1.jpg');
+INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES (2,'les guitares', 'toute la panoplie des guitares ainsi que leurs accessoires sont à votre disposition ici!!', NULL, 'rubrique2.png');
+INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES	(3,'les claviers', 'toute la panoplie des claviers ainsi que leurs accessoires sont à votre disposition ici!!', NULL, 'rubrique3.jpg');
+INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES	(4,'les instruments à cordes frottées', 'toute la panoplie des instruments à cordes frottées ainsi que leurs accessoires sont à votre disposition ici!!', NULL, 'rubrique4.jpg');
+INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES	(5,'les saxophones','toute la panoplie de nos saxophones !!', 1, 'rubrique5.jpg');
+INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES	(6,'les clarinettes','toute la panoplie de nos plus belles clarinettes !!', 1, 'rubrique6.jpg');
+INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES	(7,'les flûtes','toute la panoplie de nos plus belles flûtes avec en exclusivité nos plus beaux pipeaux !!', 1, 'rubrique7.jpg');
+INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES	(8,'les trompettes','toute la panoplie de nos plus belles trompettes !!', 1, 'rubrique8.jpg');
+INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES	(9,'les trombones','toute la panoplie de nos plus beaux trombones !!', 1, 'rubrique9.jpg');
+INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES	(10,'les gros cuivres','toute la panoplie de nos plus beaux gros cuivres !!', 1, 'rubrique10.jpg');
+INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES	(11,'les becs','toute la panoplie de nos plus beaux gros cuivres !!', 1, 'rubrique11.jpg');
+INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES	(12,'les embouchures','toute la panoplie de nos plus beaux gros cuivres !!', 1, 'rubrique12.jpg');
+insert into rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES (13, 'Guitare Acoustique', 'La guitare acoustique possède une caisse de résonance servant à amplifier les vibrations des cordes.', 2, 'rubrique13.jpg');
+insert into rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES (14, 'Guitare Classique', 'La guitare classique, également appelée guitare espagnole, est un instrument de musique de la famille des cordes pincées.', 2, 'rubrique14.jpg');
+insert into rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES (15, 'Guitare Electrique', 'La guitare électrique est un type de guitare qui produit des sons grâce à des capteurs électromagnétiques.', 2, 'rubrique15.jpg');
+insert into rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES (16, 'Guitare Basse', 'C''est un instrument de musique à cordes conçu selon le même principe que la guitare électrique, mais avec une tessiture plus grave.', 2, 'rubrique16.jpg');
+insert into rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES (17, 'Contrebasses', 'La contrebasse est un instrument grave de la famille des instruments à cordes.', 4, 'rubrique17.jpg');
+insert into rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES (18, 'Violons', 'Le violon est un instrument de musique à cordes frottées', 4, 'rubrique18.jpg');
+insert into rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES (19, 'Violoncelles', 'Le violoncelle est un instrument à cordes frottées (mises en vibration par l''action de l''archet) ou pincées (le pizzicato) de la famille des cordes frottées, qui compte aussi le violon, l''alto et la contrebasse.', 4, 'rubrique19.jpg');
+insert into rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES (20, 'Clavier Arrangeur', 'Le clavier est, en musique et plus précisément en organologie, un ensemble de touches enfoncées à l''aide des doigts pour jouer de certains instruments.', 3, 'rubrique20.jpg');
+insert into rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES (21, 'Piano Numérique', 'Un piano numérique est un instrument de musique électronique, équipé du clavier standard d''un piano, et reproduisant le son d''un piano acoustique grâce à un système électronique, la technologie la plus utilisée étant l''échantillonnage sonore.', 3, 'rubrique21.jpg');
+insert into rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES (22, 'Clavier Maitre','Le clavier maitre est un clavier sans son qui permet de piloter les instruments virtuels des logiciels de musique, et d''enregistrer dans ces logiciels les évènements MIDI lorsque l''on joue dessus.', 3, 'rubrique22.jpg');
 
-INSERT INTO produit(pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id) VALUES ('Coolwind Trompette Sib, plastique rouge','Fabriqués à base de plastique ABS, les produits Coolwind vous permettent de jouer partout ! Ne vous souciez plus d’abimer votre instrument principal lorsque vous vous déplacez ou jouez en extérieur',60,8,1);
-INSERT INTO produit(pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id) VALUES ('Getzen Trompette Sib étudiant vernie 490-SC','Une trompette d''étude, certes, mais avec des qualités de semi-professionnelle.',580,8,2);
-INSERT INTO produit(pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id) VALUES ('Coolwind Euphonium Sib en plastique rouge','Fabriqués à base de plastique ABS, les produits Coolwind vous permettent de jouer partout ! Ne vous souciez plus d’abimer votre instrument principal lorsque vous vous déplacez ou jouez en extérieur',170,10,1);
-INSERT INTO produit(pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id) VALUES ('Jupiter Saxhorn baryton de défilé verni JBR1000M','',476,10,3);
-INSERT INTO produit(pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id) VALUES ('Altus Flûte en Ut plateaux creux AS807RI','Cet instrument, fabriqué à la main, disponible en patte d’Ut ou en patte de Si, est une porte d’entrée vers le monde des flûtes japonaises.',753,7,5);
-INSERT INTO produit(pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id) VALUES ('Jupiter Flûte en Ut goutte d''eau JFL700WD','Avec sa flûte traversière goutte d’eau JFL700WD primée au Red Dot Design Award, Jupiter a su s’imposer sur le marché comme une marque novatrice au service des musiciens.',241,7,3);
-INSERT INTO produit(pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id) VALUES ('Coolwind Trombone complet plastique red CTB-200RD','Trombone complet en Sib et en Fa avec noix, un corps en plastique ABS et une coulisse en fibre de carbone, un pavillon au diamètre de 216 mm et une perce de 13,9 mm.',74,9,1);
-INSERT INTO produit(pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id) VALUES ('Jupiter Trombone ténor complet pro JTB1150FOQ','Tonalité : Sib/Fa Perce :13,89mm Pavillon : 215mm, laiton verni Noix, Open Wrap Tubes extérieurs coulisse de jeu : maillechort Tubes intérieurs : maillechort chromé',500,9,3);
-INSERT INTO produit(pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id) VALUES ('Nuvo Saxophone d''éveil ABS noir et rose','Le jSax n''est pas un jouet mais un véritable instrument de musique même si son aspect très coloré attire les plus jeunes !', 38, 5,4);
-INSERT INTO produit(pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id) VALUES ('Jupiter Saxophone baryton pro plaqué argent','Au-delà des brevets d''ergonomie de ses instruments d''étude, la marque Jupiter a su poursuivre ses innovations pour proposer ce modèle professionnel doté d''un bocal qui lui confère une sonorité unique au monde.', 1876, 5, 3);
-INSERT INTO produit(pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id) VALUES ('Jupiter Saxonett JRS700','Jupiter Clarinettes JRS700 présentation Le Saxonett JRS700 constitue un passage idéal pour les jeunes joueurs de flûtes à bec souhaitant apprendre à jouer du saxophone ou de la clarinette. Il associe le bec de la clarinette avec le corps de la flûte à bec.', 39, 6, 3);
-INSERT INTO produit(pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id) VALUES ('Jupiter Clarinette basse ABS clés argentées','Jupiter Clarinettes JRC1000S haut de gamme', 763, 6, 3);
-INSERT INTO produit(pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id) VALUES ('Nuvo Clarinette d''éveil ABS noire et bleue','Nuvo met la musique à la portée de tous les enfants ! Un concept simple et ingénieux pour de véritables instruments de qualité.', 14, 6, 4);
-INSERT INTO produit(pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id) VALUES ('Sml Accessoires Bec saxophone alto ébonite','Bec ébonite avec ligature métal et couvre-bec plastique', 9, 11, 7);
-INSERT INTO produit(pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id) VALUES ('Sml Accessoires Bec clarinette Sib ébonite','Bec ébonite avec ligature métal et couvre-bec plastique', 9.70, 11, 7);
-INSERT INTO produit(pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id) VALUES ('Sml Accessoires Extracteur d''embouchure','Prend appui sur le boisseau de la branche d''embouchure. Un système de vis sans fin retire l''embouchure coincée.', 39, 12, 7);
-INSERT INTO produit(pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id) VALUES ('Sml Accessoires Embouchure trompette plastique 3C','L''embouchure pour débutant par excellence !', 8.40, 12, 7);
+
+INSERT INTO produit(pro_id, pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id, pro_photo) VALUES (1, 'Coolwind Trompette Sib, plastique rouge','Fabriqués à base de plastique ABS, les produits Coolwind vous permettent de jouer partout ! Ne vous souciez plus d’abimer votre instrument principal lorsque vous vous déplacez ou jouez en extérieur',60,8,1, 'produit1.png');
+INSERT INTO produit(pro_id, pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id, pro_photo) VALUES (2, 'Getzen Trompette Sib étudiant vernie 490-SC','Une trompette d''étude, certes, mais avec des qualités de semi-professionnelle.',580,8,2, 'produit2.png');
+INSERT INTO produit(pro_id, pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id, pro_photo) VALUES (3, 'Coolwind Euphonium Sib en plastique rouge','Fabriqués à base de plastique ABS, les produits Coolwind vous permettent de jouer partout ! Ne vous souciez plus d’abimer votre instrument principal lorsque vous vous déplacez ou jouez en extérieur',170,10,1, 'produit3.png');
+INSERT INTO produit(pro_id, pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id, pro_photo) VALUES (4, 'Jupiter Saxhorn baryton de défilé verni JBR1000M','',476,10,3, 'produit4.png');
+INSERT INTO produit(pro_id, pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id, pro_photo) VALUES (5, 'Altus Flûte en Ut plateaux creux AS807RI','Cet instrument, fabriqué à la main, disponible en patte d’Ut ou en patte de Si, est une porte d’entrée vers le monde des flûtes japonaises.',753,7,5, 'produit5.png');
+INSERT INTO produit(pro_id, pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id, pro_photo) VALUES (6, 'Jupiter Flûte en Ut goutte d''eau JFL700WD','Avec sa flûte traversière goutte d’eau JFL700WD primée au Red Dot Design Award, Jupiter a su s’imposer sur le marché comme une marque novatrice au service des musiciens.',241,7,3, 'produit6.png');
+INSERT INTO produit(pro_id, pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id, pro_photo) VALUES (7, 'Coolwind Trombone complet plastique red CTB-200RD','Trombone complet en Sib et en Fa avec noix, un corps en plastique ABS et une coulisse en fibre de carbone, un pavillon au diamètre de 216 mm et une perce de 13,9 mm.',74,9,1, 'produit7.png');
+INSERT INTO produit(pro_id, pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id, pro_photo) VALUES (8, 'Jupiter Trombone ténor complet pro JTB1150FOQ','Tonalité : Sib/Fa Perce :13,89mm Pavillon : 215mm, laiton verni Noix, Open Wrap Tubes extérieurs coulisse de jeu : maillechort Tubes intérieurs : maillechort chromé',500,9,3, 'produit8.png');
+INSERT INTO produit(pro_id, pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id, pro_photo) VALUES (9, 'Nuvo Saxophone d''éveil ABS noir et rose','Le jSax n''est pas un jouet mais un véritable instrument de musique même si son aspect très coloré attire les plus jeunes !', 38, 5,4, 'produit9.png');
+INSERT INTO produit(pro_id, pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id, pro_photo) VALUES (10, 'Jupiter Saxophone baryton pro plaqué argent','Au-delà des brevets d''ergonomie de ses instruments d''étude, la marque Jupiter a su poursuivre ses innovations pour proposer ce modèle professionnel doté d''un bocal qui lui confère une sonorité unique au monde.', 1876, 5, 3, 'produit10.png');
+INSERT INTO produit(pro_id, pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id, pro_photo) VALUES (11, 'Jupiter Saxonett JRS700','Jupiter Clarinettes JRS700 présentation Le Saxonett JRS700 constitue un passage idéal pour les jeunes joueurs de flûtes à bec souhaitant apprendre à jouer du saxophone ou de la clarinette. Il associe le bec de la clarinette avec le corps de la flûte à bec.', 39, 6, 3, 'produit11.png');
+INSERT INTO produit(pro_id, pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id, pro_photo) VALUES (12, 'Jupiter Clarinette basse ABS clés argentées','Jupiter Clarinettes JRC1000S haut de gamme', 763, 6, 3, 'produit12.png');
+INSERT INTO produit(pro_id, pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id, pro_photo) VALUES (13, 'Nuvo Clarinette d''éveil ABS noire et bleue','Nuvo met la musique à la portée de tous les enfants ! Un concept simple et ingénieux pour de véritables instruments de qualité.', 14, 6, 4, 'produit13.png');
+INSERT INTO produit(pro_id, pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id, pro_photo) VALUES (14, 'Sml Accessoires Bec saxophone alto ébonite','Bec ébonite avec ligature métal et couvre-bec plastique', 9, 11, 7, 'produit14.png');
+INSERT INTO produit(pro_id, pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id, pro_photo) VALUES (15, 'Sml Accessoires Bec clarinette Sib ébonite','Bec ébonite avec ligature métal et couvre-bec plastique', 9.70, 11, 7, 'produit15.png');
+INSERT INTO produit(pro_id, pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id, pro_photo) VALUES (16, 'Sml Accessoires Extracteur d''embouchure','Prend appui sur le boisseau de la branche d''embouchure. Un système de vis sans fin retire l''embouchure coincée.', 39, 12, 7, 'produit16.png');
+INSERT INTO produit(pro_id, pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id, pro_photo) VALUES (17, 'Sml Accessoires Embouchure trompette plastique 3C','L''embouchure pour débutant par excellence !', 8.40, 12, 7, 'produit17.png');
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (18, 'CORT EARTH70 NATURAL OPEN PORES', 'CORTE70OP', 'CORT+E70OP.JPG', 198, 13, 1);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (19, 'TAYLOR GUITARS GS MINI ACAJOU ', 'TAYLORGSMN', 'TAYLOR+GS+MINI+MAH+2016.JPG', 599, 13, 2);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (20, 'YAMAHA ETUDE C40BL BLACK', 'YAMAHAC40BL', 'YAMAHA+C40BL.JPG', 140,  14, 3);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (21, 'ALHAMBRA CLASSIC SERIES 4 OP', 'ALHAMBRA7840', 'ALHAMBRA+7840.JPG', 570,  14, 4);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (22, 'GIBSON ES-335 DOT, ANTIQUE FADED CHERRY', 'GBIESDPFCNH1', 'GBI+ESDPFCNH1.JPG', 2749, 15, 5);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (23, 'EAGLETONE PHOENIX MP SUNBURST', 'EAGLETONEPHOENIX', 'EAGLETONE+PHOENIX+MP+SUNBURST.JPG', 129, 15, 7);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (24, 'SIRE MARCUS MILLER V7 SWAMP ASH-5 LH NT MN LH NATUREL', 'MARCUSMILLERMM045K', 'MARCUSMILLER+MM045K.JPG', 799, 16, 1);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (25, 'IBANEZ SR370EF-BBT BROWN BURST', 'IBANEZSR370EFBBT', 'IBANEZ+SR370EFBBT.JPG', 379, 16, 2);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (32, 'GEWA 3/4 CONTREBASSE ALLEGRO - TABLE MASSIVE', 'GEWA26293', 'GEWA+26293.JPG', 1469, 17, 2);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (33, 'NSDESIGN CONTREBASSE ELECTRIQUE 5 CORDES SATIN SUNBURST', 'NSDESIGN2NSNXT5', 'NSDESIGN+2NSNXT5a+DB+SSBT.JPG', 1949, 17, 3);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (34, 'EAGLETONE RIMINI 3/4', 'EAGLETONER34', 'EAGLETONE+RIMINI+3-4.JPG', 169, 18, 4);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (35, 'YAMAHA 4/4 VIOLON V7SG44', 'KV7SG44', 'KV7SG44.JPG', 687, 18, 5);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (36, 'GEWA 4/4 O.M. MONNICH ENSEMBLES VIOLONCELLE HW', 'GEWA+35731', 'GEWA+35731.JPG', 619, 19, 6);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (37, 'HERCULES STANDS STAND VIOLONCELLE DS580B', 'DS580B', 'HERCULES+DS580B.JPG', 54, 19, 7);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (38, 'EAGLETONE MPW320 USB', 'EMPW320', 'EAGLETONE+MPW320.JPG', 139, 20, 1);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (39, 'YAMAHA PSR-S670', 'YPSRS670', 'YAMAHA+PSR+S670.JPG', 555, 20, 2);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (40, 'BIRD INSTRUMENTS PACK DELUXE XP1 BK', 'BIRDXP1BK', 'BIRD+XP1+BK+PACK+DELUXE.JPG', 399, 21, 3);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (41, 'BIRD INSTRUMENTS DP1 ET BANQUETTE', 'BIRDDP1RW', 'BIRD+DP1+RW.JPG', 399, 21, 4);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (42, 'AKAI MPK MINI MK2', 'MPKMINI', 'MAUDIO+MPKMINI.JPG', 79, 22, 5);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (43, 'NATIVE INSTRUMENTS KOMPLETE KONTROL S61 MK2', 'KKS61MK2', 'NATIVE+KKS61+MK2.JPG', 630, 22, 6);
 
 -- création 30 commandes, n° 17 à 19 retards de paiement, n° 26 et27 partiellement livrés et n°28 à 30 non livrés
 
