@@ -14,6 +14,16 @@
 
 
 </head>
+<!-- Logo de VillageGreen à integrer -->
+<img src="/Fil_Rouge_AFPA/annexe/Charte/HEADER/logo village green.png" alt="image du header">
+
+<!-- Background en nuance de gris pour les 3 bandeaux -->
+
+<!-- Bandeau  contenant les liens vers Accueil, Connexion et Panier -->
+
+<!-- Bandeau contenant un lien vers Produits, et des bouton sans lien vers Service, Aide et A propos -->
+
+<!-- Bandeau contenant des liens vers les catégories d'instrument (voir BDD pour terme exact) -->
 
 <body>
     
