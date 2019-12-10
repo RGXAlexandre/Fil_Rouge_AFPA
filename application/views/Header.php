@@ -11,7 +11,7 @@
     <!-- Feuille de style pour le Site -->
     <link rel="stylesheet" href="/Fil_Rouge_AFPA/assets/css/styleSite.css">
     <!-- Feuille de style pour le Header -->
-    <link rel="stylesheet" href="/Fil_Rouge_AFPA/assets/css/styleHeader.css">
+    <link rel="stylesheet" href="/Fil_Rouge_AFPA/assets/css/styleHeaderFooter.css">
 
 
 
@@ -32,19 +32,19 @@
         </div>
     <br>
     <!-- Bandeau  contenant les liens vers Accueil, Connexion et Panier -->
-    <a href="http://127.0.0.1/Fil_Rouge_AFPA/index.php/Accueil/Acc/">Accueil</a>
-    <a href="http://127.0.0.1/Fil_Rouge_AFPA/index.php/Connexion/Con/">Connexion</a>
-    <a href="http://127.0.0.1/Fil_Rouge_AFPA/index.php/Panier/Pan/">Panier</a>
+    <a href ="<?php echo site_url("Accueil/Acc"); ?>">Accueil</a>
+    <a href ="<?php echo site_url("Connexion/Con"); ?>">Connexion</a>
+    <a href ="<?php echo site_url("Panier/Pan"); ?>">Panier</a>
     <br>
     <!-- Bandeau contenant un lien vers Produits, et des bouton sans lien vers Service, Aide et A propos -->
-    <a href="http://127.0.0.1/Fil_Rouge_AFPA/index.php/Produit/Pro/">Produit</a>
-    <a href="http://127.0.0.1/Fil_Rouge_AFPA/index.php/Service/Ser/">Service</a>
-    <a href="http://127.0.0.1/Fil_Rouge_AFPA/index.php/a_Propos/APro/">A propos</a>
+    <a href ="<?php echo site_url("Produit/Pro"); ?>">Produit</a>
+    <a href="">Service</a>
+    <a href="">A propos</a>
     <br>
     <!-- Bandeau contenant des liens vers les catégories d'instrument (voir BDD pour terme exact) -->
-    <a href="http://127.0.0.1/Fil_Rouge_AFPA/index.php/Categorie/xxx/">Instruments à vent</a>
-    <a href="http://127.0.0.1/Fil_Rouge_AFPA/index.php/Categorie/yyy/">Instruments à cordes frottées</a>
-    <a href="http://127.0.0.1/Fil_Rouge_AFPA/index.php/Categorie/zzz/">Les claviers</a>
+    <a href ="<?php echo site_url("Categories/Vents"); ?>">Instruments à vent</a>
+    <a href ="<?php echo site_url("Categories/Cordes"); ?>">Instruments à cordes frottées</a>
+    <a href ="<?php echo site_url("Categories/Claviers"); ?>">Les claviers</a>
     <hr>
 
     <body>
