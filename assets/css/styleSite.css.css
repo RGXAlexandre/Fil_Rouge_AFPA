@@ -1,0 +1,24 @@
+#rouge {
+    color: red;
+}
+
+.OK {
+    border-color: green;
+    border-width: 2px;
+}
+
+.KO {
+    border-color: red;
+    border-width: 3px;
+    font-weight: bolder;
+}
+
+input,
+textarea {
+    margin: 7px 0;
+}
+
+legend {
+    text-align: center;
+    font-weight: bold;
+}
