@@ -1,7 +1,7 @@
 <?php
-class Site extends CI_controller {
+class Connexion extends CI_controller {
 
-    public function connexion () {
+    public function Con () {
         
         $this->load->view("header.php");
         $this->load->view("connexion.php");

@@ -1,8 +1,8 @@
 <?php
-class Accueil extends CI_Controller {
+class Accueil extends CI_controller {
     
+    public function Acc () {
 
-    public function Hello () {
         $this->load->view("header.php");
         $this->load->view("accueil.php");
         $this->load->view("footer.php");

@@ -1,7 +1,7 @@
 <?php
-class Site extends CI_controller {
+class Produit extends CI_controller {
 
-    public function produit () {
+    public function Pro () {
         
         $this->load->view("header.php");
         $this->load->view("produit.php");

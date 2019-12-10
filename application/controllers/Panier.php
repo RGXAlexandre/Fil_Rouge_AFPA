@@ -1,7 +1,7 @@
 <?php
-class Site extends CI_controller {
+class Panier extends CI_controller {
 
-    public function panier () {
+    public function Pan () {
         
         $this->load->view("header.php");
         $this->load->view("panier.php");

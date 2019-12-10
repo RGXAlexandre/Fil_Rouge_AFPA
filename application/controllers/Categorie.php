@@ -1,7 +1,7 @@
 <?php
-class Site extends CI_controller {
+class Categorie extends CI_controller {
 
-    public function categories () {
+    public function Cat () {
         
         $this->load->view("header.php");
         $this->load->view("categories.php");

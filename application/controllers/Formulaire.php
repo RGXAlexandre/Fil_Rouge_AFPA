@@ -1,7 +1,7 @@
 <?php
-class Site extends CI_controller {
+class Formulaire extends CI_controller {
 
-    public function formulaire () {
+    public function For () {
         
         $this->load->view("header.php");
         $this->load->view("formulaire.php");
