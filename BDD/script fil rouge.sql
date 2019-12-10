@@ -20,7 +20,7 @@ CREATE TABLE Employé(
    emp_prenom VARCHAR(50) NOT NULL,
    emp_telephone VARCHAR(20),
    emp_mail VARCHAR(50) UNIQUE,
-   emp_password VARCHAR(50),
+   emp_password VARCHAR(255),
    emp_fonction VARCHAR(50),
    PRIMARY KEY(emp_id)
 );
@@ -34,7 +34,7 @@ CREATE TABLE `CLIENT`(
    cli_ville VARCHAR(50) NOT NULL,
    cli_pays VARCHAR(50) NOT NULL,
    cli_mail VARCHAR(50) UNIQUE,
-   cli_password VARCHAR(50),   
+   cli_password VARCHAR(255),   
    cli_telephone VARCHAR(20),
    cli_statut VARCHAR(50),
    cli_coefficient DECIMAL(4,2) NOT NULL DEFAULT 3 CHECK(cli_coefficient>1),
@@ -265,26 +265,26 @@ INSERT INTO produit(pro_id, pro_libelle_court, pro_libelle_long, pro_prix_achat,
 INSERT INTO produit(pro_id, pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id, pro_photo) VALUES (15, 'Sml Accessoires Bec clarinette Sib ébonite','Bec ébonite avec ligature métal et couvre-bec plastique', 9.70, 11, 7, 'produit15.png');
 INSERT INTO produit(pro_id, pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id, pro_photo) VALUES (16, 'Sml Accessoires Extracteur d''embouchure','Prend appui sur le boisseau de la branche d''embouchure. Un système de vis sans fin retire l''embouchure coincée.', 39, 12, 7, 'produit16.png');
 INSERT INTO produit(pro_id, pro_libelle_court, pro_libelle_long, pro_prix_achat, pro_rub_id, pro_fou_id, pro_photo) VALUES (17, 'Sml Accessoires Embouchure trompette plastique 3C','L''embouchure pour débutant par excellence !', 8.40, 12, 7, 'produit17.png');
-insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (18, 'CORT EARTH70 NATURAL OPEN PORES', 'CORTE70OP', 'CORT+E70OP.JPG', 198, 13, 1);
-insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (19, 'TAYLOR GUITARS GS MINI ACAJOU ', 'TAYLORGSMN', 'TAYLOR+GS+MINI+MAH+2016.JPG', 599, 13, 2);
-insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (20, 'YAMAHA ETUDE C40BL BLACK', 'YAMAHAC40BL', 'YAMAHA+C40BL.JPG', 140,  14, 3);
-insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (21, 'ALHAMBRA CLASSIC SERIES 4 OP', 'ALHAMBRA7840', 'ALHAMBRA+7840.JPG', 570,  14, 4);
-insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (22, 'GIBSON ES-335 DOT, ANTIQUE FADED CHERRY', 'GBIESDPFCNH1', 'GBI+ESDPFCNH1.JPG', 2749, 15, 5);
-insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (23, 'EAGLETONE PHOENIX MP SUNBURST', 'EAGLETONEPHOENIX', 'EAGLETONE+PHOENIX+MP+SUNBURST.JPG', 129, 15, 7);
-insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (24, 'SIRE MARCUS MILLER V7 SWAMP ASH-5 LH NT MN LH NATUREL', 'MARCUSMILLERMM045K', 'MARCUSMILLER+MM045K.JPG', 799, 16, 1);
-insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (25, 'IBANEZ SR370EF-BBT BROWN BURST', 'IBANEZSR370EFBBT', 'IBANEZ+SR370EFBBT.JPG', 379, 16, 2);
-insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (32, 'GEWA 3/4 CONTREBASSE ALLEGRO - TABLE MASSIVE', 'GEWA26293', 'GEWA+26293.JPG', 1469, 17, 2);
-insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (33, 'NSDESIGN CONTREBASSE ELECTRIQUE 5 CORDES SATIN SUNBURST', 'NSDESIGN2NSNXT5', 'NSDESIGN+2NSNXT5a+DB+SSBT.JPG', 1949, 17, 3);
-insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (34, 'EAGLETONE RIMINI 3/4', 'EAGLETONER34', 'EAGLETONE+RIMINI+3-4.JPG', 169, 18, 4);
-insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (35, 'YAMAHA 4/4 VIOLON V7SG44', 'KV7SG44', 'KV7SG44.JPG', 687, 18, 5);
-insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (36, 'GEWA 4/4 O.M. MONNICH ENSEMBLES VIOLONCELLE HW', 'GEWA+35731', 'GEWA+35731.JPG', 619, 19, 6);
-insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (37, 'HERCULES STANDS STAND VIOLONCELLE DS580B', 'DS580B', 'HERCULES+DS580B.JPG', 54, 19, 7);
-insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (38, 'EAGLETONE MPW320 USB', 'EMPW320', 'EAGLETONE+MPW320.JPG', 139, 20, 1);
-insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (39, 'YAMAHA PSR-S670', 'YPSRS670', 'YAMAHA+PSR+S670.JPG', 555, 20, 2);
-insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (40, 'BIRD INSTRUMENTS PACK DELUXE XP1 BK', 'BIRDXP1BK', 'BIRD+XP1+BK+PACK+DELUXE.JPG', 399, 21, 3);
-insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (41, 'BIRD INSTRUMENTS DP1 ET BANQUETTE', 'BIRDDP1RW', 'BIRD+DP1+RW.JPG', 399, 21, 4);
-insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (42, 'AKAI MPK MINI MK2', 'MPKMINI', 'MAUDIO+MPKMINI.JPG', 79, 22, 5);
-insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (43, 'NATIVE INSTRUMENTS KOMPLETE KONTROL S61 MK2', 'KKS61MK2', 'NATIVE+KKS61+MK2.JPG', 630, 22, 6);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (18, 'CORT EARTH70 NATURAL OPEN PORES', 'CORTE70OP', 'produit18.JPG', 198, 13, 1);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (19, 'TAYLOR GUITARS GS MINI ACAJOU ', 'TAYLORGSMN', 'produit19.JPG', 599, 13, 2);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (20, 'YAMAHA ETUDE C40BL BLACK', 'YAMAHAC40BL', 'produit20.JPG', 140,  14, 3);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (21, 'ALHAMBRA CLASSIC SERIES 4 OP', 'ALHAMBRA7840', 'produit21.JPG', 570,  14, 4);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (22, 'GIBSON ES-335 DOT, ANTIQUE FADED CHERRY', 'GBIESDPFCNH1', 'produit22.JPG', 2749, 15, 5);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (23, 'EAGLETONE PHOENIX MP SUNBURST', 'EAGLETONEPHOENIX', 'produit23.JPG', 129, 15, 7);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (24, 'SIRE MARCUS MILLER V7 SWAMP ASH-5 LH NT MN LH NATUREL', 'MARCUSMILLERMM045K', 'produit24.JPG', 799, 16, 1);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (25, 'IBANEZ SR370EF-BBT BROWN BURST', 'IBANEZSR370EFBBT', 'produit25.JPG', 379, 16, 2);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (32, 'GEWA 3/4 CONTREBASSE ALLEGRO - TABLE MASSIVE', 'GEWA26293', 'produit32.JPG', 1469, 17, 2);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (33, 'NSDESIGN CONTREBASSE ELECTRIQUE 5 CORDES SATIN SUNBURST', 'NSDESIGN2NSNXT5', 'produit33.JPG', 1949, 17, 3);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (34, 'EAGLETONE RIMINI 3/4', 'EAGLETONER34', 'produit34.JPG', 169, 18, 4);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (35, 'YAMAHA 4/4 VIOLON V7SG44', 'KV7SG44', 'produit35.JPG', 687, 18, 5);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (36, 'GEWA 4/4 O.M. MONNICH ENSEMBLES VIOLONCELLE HW', 'GEWA+35731', 'produit36.JPG', 619, 19, 6);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (37, 'HERCULES STANDS STAND VIOLONCELLE DS580B', 'DS580B', 'produit37.JPG', 54, 19, 7);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (38, 'EAGLETONE MPW320 USB', 'EMPW320', 'produit38.JPG', 139, 20, 1);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (39, 'YAMAHA PSR-S670', 'YPSRS670', 'produit39.JPG', 555, 20, 2);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (40, 'BIRD INSTRUMENTS PACK DELUXE XP1 BK', 'BIRDXP1BK', 'produit40.JPG', 399, 21, 3);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (41, 'BIRD INSTRUMENTS DP1 ET BANQUETTE', 'BIRDDP1RW', 'produit41.JPG', 399, 21, 4);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (42, 'AKAI MPK MINI MK2', 'MPKMINI', 'produit42.JPG', 79, 22, 5);
+insert into Produit (pro_id, pro_libelle_court, pro_libelle_long, pro_photo, pro_prix_achat, pro_rub_id, pro_fou_id) values (43, 'NATIVE INSTRUMENTS KOMPLETE KONTROL S61 MK2', 'KKS61MK2', 'produit43.JPG', 630, 22, 6);
 
 -- création 30 commandes, n° 17 à 19 retards de paiement, n° 26 et27 partiellement livrés et n°28 à 30 non livrés
 
