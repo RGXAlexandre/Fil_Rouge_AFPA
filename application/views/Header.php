@@ -13,10 +13,9 @@
     <!-- Feuille de style pour le HeaderFooter -->
     <link rel="stylesheet" href="/Fil_Rouge_AFPA/assets/css/styleHeaderFooter.css">
 
-
-
-
 </head>
+
+
 <div class="container-fluid" id="container-bordure">
 
     <div class="container" id="container-centre">
