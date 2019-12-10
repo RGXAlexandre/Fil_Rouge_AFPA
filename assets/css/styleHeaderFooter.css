@@ -1,17 +1,27 @@
 #container-bordure {
     background-image: url("/Fil_Rouge_AFPA/annexe/Charte/BACKGROUND/background_village.png");
+    Background-position: center;
+    width: 100%;
+    height: auto;
+    
 }
 
 #container-centre {
-    background-color:darkgray;
+    background-image: url("/Fil_Rouge_AFPA/annexe/Charte/BACKGROUND/bande_milieu.png");
+    Background-position: center;
+    width: 100%;
+    height: auto;
+    
 }
 
 #LogoVillageGreen {
-    
+    z-index: 1;
+    position: relative;
 }
 
 #BandesHeader {
-    
+    z-index: auto;
+    position: relative;
 }
 
 #imageFooter {

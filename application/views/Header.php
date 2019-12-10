@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <!-- Feuille de style pour le Site -->
     <link rel="stylesheet" href="/Fil_Rouge_AFPA/assets/css/styleSite.css">
-    <!-- Feuille de style pour le Header -->
+    <!-- Feuille de style pour le HeaderFooter -->
     <link rel="stylesheet" href="/Fil_Rouge_AFPA/assets/css/styleHeaderFooter.css">
 
 
@@ -22,12 +22,13 @@
     <div class="container" id="container-centre">
         <div class="row">
             <div class="col-2">
-    <!-- Logo de VillageGreen à integrer -->
-    <img src="/Fil_Rouge_AFPA/annexe/Charte/HEADER/logo village green.png" alt="Logo VillageGreen" id="LogoVillageGreen">
+                <!-- Logo de VillageGreen à integrer -->
+                <img src="/Fil_Rouge_AFPA/annexe/Charte/HEADER/logo village green.png" alt="Logo VillageGreen" id="LogoVillageGreen" class="superpose">
             </div>
-            <div class="col-10" >
-    <!-- Background en nuance de gris pour les 3 bandeaux -->
-    <img src="/Fil_Rouge_AFPA/annexe/Charte/HEADER/3 bandes.png" alt="image 3 bandes grise" id="BandesHeader";>
+
+            <div class="col-10" >     
+                <!-- Background en nuance de gris pour les 3 bandeaux -->
+                <img src="/Fil_Rouge_AFPA/annexe/Charte/HEADER/3 bandes.png" alt="image 3 bandes grise" id="BandesHeader" class="superpose" width="100%" height="100%";>
             </div>
         </div>
     <br>

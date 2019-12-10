@@ -1,6 +1,6 @@
     <footer>
         <!-- Lien vers l'image "footer", présente sur toutes les pages du site-->
-        <img src="/Fil_Rouge_AFPA/annexe/Charte/FOOTER/footer.png" alt="image du footer" id="imageFooter">
+        <img src="/Fil_Rouge_AFPA/annexe/Charte/FOOTER/footer.png" alt="image du footer" id="imageFooter" width="100%" height="100%">
     </footer>
 </div>
 </div>
