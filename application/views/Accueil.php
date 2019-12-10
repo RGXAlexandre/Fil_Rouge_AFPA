@@ -1,2 +1,2 @@
-<h1>Contenu d'Accueil</h1>
+<h1>Contenu de Accueil.php</h1>
 <hr>
