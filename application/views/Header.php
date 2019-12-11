@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-2">
                 <!-- Logo de VillageGreen à integrer -->
-                <img src="/Fil_Rouge_AFPA/annexe/Charte/HEADER/logo village green.png" alt="Logo VillageGreen" id="LogoVillageGreen" class="superpose">
+                <a href="<?php echo site_url("Accueil/Acc"); ?>"><img src="/Fil_Rouge_AFPA/annexe/Charte/HEADER/logo village green.png" alt="Logo VillageGreen" id="LogoVillageGreen" class="superpose"></a>
             </div>
 
             <div class="col-10" >     
