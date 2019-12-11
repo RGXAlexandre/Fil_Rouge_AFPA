@@ -2,6 +2,9 @@
     color: red;
 }
 
+
+/* classe pour le formulaire */
+
 .OK {
     border-color: green;
     border-width: 2px;
@@ -21,4 +24,29 @@ textarea {
 legend {
     text-align: center;
     font-weight: bold;
+}
+
+
+/* classe pour les images des pages d'accueil */
+
+@media (max-width: 1199px) {
+    #img2 {
+        display: none;
+    }
+    #img1 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    #img2 {
+        display: none;
+    }
+    #img1 {
+        display: none;
+    }
+}
+
+#img2 {
+    padding-left: 40px;
 }
