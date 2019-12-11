@@ -64,3 +64,13 @@ legend {
     height: 155px;
     width: auto;
 }
+
+
+/* gerer le responsive avec variation du width en fonction de la résolution */
+
+.overflow-ellipsis {
+    width: 253px;
+    height: 160px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
