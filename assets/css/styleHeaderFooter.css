@@ -1,17 +1,16 @@
+/* TODO FUSION DES FEUILLES DE STYLE CSS EN UN SEUL FICHIER A LA FIN DU PROJET - UN SEUL APPEL DANS LE FOOTER */
 #container-bordure {
     background-image: url("/Fil_Rouge_AFPA/annexe/Charte/BACKGROUND/background_village.png");
     background-size: cover;
 
-    
 }
 
 #container-centre {
-    background-image: url("/Fil_Rouge_AFPA/annexe/Charte/BACKGROUND/bande_milieu.png");
+    /* retrait de l'image, qui gere une "barre de vide" à chaque retour du fichier. Definition d'une couleur fixe pour le container. */
+    background-color: #e7e7e7;
     Background-position: center;
     width: 100%;
     height: auto;
-    
-    
 }
 
 #LogoVillageGreen {
