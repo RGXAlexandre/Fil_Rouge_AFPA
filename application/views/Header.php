@@ -9,7 +9,7 @@
     <!-- Lien vers le CDN Boostrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <!-- Feuille de style pour le Site -->
-    <link rel="stylesheet" href="/Fil_Rouge_AFPA/assets/css/styleSite.css">
+    <link rel="stylesheet" href="/Fil_Rouge_AFPA/assets/css/styleSite.css.css">
     <!-- Feuille de style pour le HeaderFooter -->
     <link rel="stylesheet" href="/Fil_Rouge_AFPA/assets/css/styleHeaderFooter.css">
 

@@ -50,3 +50,17 @@ legend {
 #img2 {
     padding-left: 40px;
 }
+
+
+/* Mise en page card */
+
+.MLD20 {
+    margin: 15px auto;
+    max-width: 100%;
+}
+
+.h155 {
+    margin: 0px auto;
+    height: 155px;
+    width: auto;
+}
