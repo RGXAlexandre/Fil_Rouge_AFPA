@@ -1,6 +1,3 @@
-<h1>Contenu de Produit.php</h1>
-<hr>
-
 <!-- <div class="row">
     <div class="col-12">
         <h2>Details du produit sélectionné</h2>

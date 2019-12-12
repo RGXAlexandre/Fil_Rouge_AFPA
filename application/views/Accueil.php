@@ -1,6 +1,3 @@
-
-<h1>Contenu de Accueil.php</h1>
-<hr>
 <!-- Mise en place des images promotions  -->
 
 <div class="row">
