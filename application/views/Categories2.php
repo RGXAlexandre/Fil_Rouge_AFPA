@@ -1,6 +1,8 @@
 <div class="row">
     <div class="col-12">
-        <h2>Sous rubrique</h2>
+    <?php foreach ($rubrique as $ligne) { ?>
+        <h2><?= $ligne->rub_nom ?></h2>
+    <?php } ?>
     </div>
 </div>
 <br>
