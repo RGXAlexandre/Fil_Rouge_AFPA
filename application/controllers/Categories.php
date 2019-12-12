@@ -16,6 +16,10 @@ class Categories extends CI_controller {
         // $requete = $this->db->query("select * from rubrique where rub_id_1 is null");
 
         // $data["rubrique"] = $requete->result();
+        $requete = $this->db->query("select * from rubrique where rub_id = ?", array($id));
+
+        $data["rubrique"] = $requete->result();
+
 
         $requete = $this->db->query("select * from rubrique where rub_id_1 = ?", array($id));
 
