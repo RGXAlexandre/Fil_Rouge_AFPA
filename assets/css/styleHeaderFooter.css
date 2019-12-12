@@ -27,3 +27,44 @@
     
 }
 
+/* Gestion du chevauchement du logo VillageGreen et de la NavBar dans le Header */
+
+@media (max-width: 1199px) {
+    #LogoVillageGreen {
+        width: 220%;
+    }
+}
+
+@media (max-width: 991px) {
+    #LogoVillageGreen {
+        width: 180%;
+    }
+}
+
+@media (max-width: 767px) {
+    #LogoVillageGreen {
+        width: 250%;
+    }
+}
+
+@media (max-width: 575px) {
+    #LogoVillageGreen {
+        width: 280%;
+    }
+}
+
+@media (max-width: 480px) {
+    #LogoVillageGreen {
+        width: 150px;
+    }
+}
+
+/* @media (max-width: 320px) {
+    #LogoVillageGreen {
+        width: 800%;
+    } */
+}
+
+
+
+

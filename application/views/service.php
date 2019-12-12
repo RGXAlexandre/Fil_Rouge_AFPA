@@ -2,12 +2,12 @@
 
 <div class="container" id="container-centre">
     <div class="row">
-        <div class="col-4">
-
+        <div class="col-3">
+            <!-- Création d'une FlipCard, voir aussi federer.css dans /assets/css/ -->
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                    <img src="/Fil_Rouge_AFPA/assets/images/roger_service" alt="Logo_roger_service" id="roger_service">
+                        <img src="/Fil_Rouge_AFPA/assets/images/roger_service" alt="Logo_roger_service" id="roger_service">
                     </div>
                     <div class="flip-card-back">
                         <h1>Roger Federer</h1>
@@ -16,11 +16,11 @@
                     </div>
                 </div>
             </div>
-            <!-- Logo de service_federer-->
-            </a>
+
+
         </div>
 
-        <div class="col-8">
+        <div class="col-9">
             <p>Dans un match de tennis, le service est le coup qui permet de mettre en jeu la balle et de débuter le point.
 
                 Le service est le coup le plus difficile techniquement parcequ'il requiert beaucoup de coordination.
