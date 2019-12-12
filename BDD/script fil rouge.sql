@@ -224,7 +224,7 @@ insert into employé (emp_prenom, emp_nom, emp_password) values ('Giovanni', 'Be
 
 
 
-INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES (1, 'les instruments à vents', 'toute la panoplie des instruments à vents ainsi que leurs accessoires sont à votre disposition ici!!', NULL, 'rubrique1.jpg');
+INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES (1, 'les instruments à vents', 'toute la panoplie des instruments à vents ainsi que leurs accessoires sont à votre disposition ici!!', NULL, 'rubrique1.jpeg');
 INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES (2,'les guitares', 'toute la panoplie des guitares ainsi que leurs accessoires sont à votre disposition ici!!', NULL, 'rubrique2.png');
 INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES	(3,'les claviers', 'toute la panoplie des claviers ainsi que leurs accessoires sont à votre disposition ici!!', NULL, 'rubrique3.jpg');
 INSERT INTO rubrique(rub_id, rub_nom, rub_libelle, rub_id_1, rub_photo) VALUES	(4,'les instruments à cordes frottées', 'toute la panoplie des instruments à cordes frottées ainsi que leurs accessoires sont à votre disposition ici!!', NULL, 'rubrique4.jpg');
