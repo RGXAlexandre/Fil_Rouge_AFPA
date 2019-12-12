@@ -1,11 +1,9 @@
-
-<!-- Vérifier si le container s'ouvre bien dans le header -->
-
 <form action="https://bienvu.net/script.php" form="form-group">
 
 <div class="row">
     <legend>Formulaire d'inscription</legend>
 </div>
+<hr>
 <div class="row">
     <div class="col-sm-4 col-lg-2">
         <label for="cli_nom">Nom *</label>

@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="/Fil_Rouge_AFPA/assets/css/styleSite.css">
     <!-- Feuille de style pour le HeaderFooter -->
     <link rel="stylesheet" href="/Fil_Rouge_AFPA/assets/css/styleHeaderFooter.css">
+    <!-- Feuille de style pour le delire Rodger Federer -->
+    <link rel="stylesheet" href="/Fil_Rouge_AFPA/assets/css/federer.css">
 
 </head>
 
@@ -60,7 +62,7 @@
                                             <div class="modal-body">
                                                 <div class="popForm popLeft">
                                                     <span>Etes-vous déjà client chez nous ?</span>
-                                                    <form action="https://dev.amorce.org/al/fil_rouge/index.php/Customers/connexion" method="post" accept-charset="utf-8">
+                                                    <form action="" method="post" accept-charset="utf-8">
 
                                                         <div class="form-group">
                                                             <label for="user"></label>
@@ -83,14 +85,9 @@
                                                     <span>Vous n'êtes pas client chez nous ?</span>
                                                     <br>
                                                     <br>
-                                                    <p>En tant que client Village Green
-                                                        vous pouvez suivre vos envois,
-                                                        lire des tests produits exclusifs,
 
-                                                        évaluer des produits, déposer
-                                                        des petites annonces, gérer
-                                                        vos chèques-cadeaux, devenir
-                                                        partenaire et bien plus encore.</p>
+                                                    <p>En tant que client Village Green, vous pouvez suivre vos envois, lire des "tests produits" exclusifs, évaluer des produits, déposer des petites annonces, gérer vos chèques-cadeaux, devenir partenaire et bien plus encore.</p>
+
                                                     <a type="button" class="btn btn-success" href="<?php echo site_url("Formulaire/For"); ?>">S'inscrire</a>
                                                     <br>
                                                     <a href="<?php echo site_url("Apropos/Apr"); ?>">Plus d'informations</a>

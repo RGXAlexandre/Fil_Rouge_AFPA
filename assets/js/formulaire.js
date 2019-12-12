@@ -13,7 +13,7 @@ cli_nom.addEventListener("blur", function() {
         cli_nom.classList.add("OK");
         document.getElementById("aideCli_nom").textContent = "";
     } else {
-        document.getElementById("aideCli_nom").textContent = "Champs incorect";
+        document.getElementById("aideCli_nom").textContent = "Champs incorrect";
         document.getElementById("aideCli_nom").style.color = "red";
         cli_nom.classList.remove("OK");
         cli_nom.classList.add("KO");
@@ -28,7 +28,7 @@ cli_prenom.addEventListener("blur", function() {
         cli_prenom.classList.add("OK");
         document.getElementById("aideCli_prenom").textContent = "";
     } else {
-        document.getElementById("aideCli_prenom").textContent = "Champs incorect";
+        document.getElementById("aideCli_prenom").textContent = "Champs incorrect";
         document.getElementById("aideCli_prenom").style.color = "red";
         cli_prenom.classList.remove("OK");
         cli_prenom.classList.add("KO");
@@ -43,7 +43,7 @@ cli_rue.addEventListener("blur", function() {
         cli_rue.classList.add("OK");
         document.getElementById("aideCli_rue").textContent = "";
     } else {
-        document.getElementById("aideCli_rue").textContent = "Champs incorect";
+        document.getElementById("aideCli_rue").textContent = "Champs incorrect";
         document.getElementById("aideCli_rue").style.color = "red";
         cli_rue.classList.remove("OK");
         cli_rue.classList.add("KO");
@@ -58,7 +58,7 @@ cli_ville.addEventListener("blur", function() {
         cli_ville.classList.add("OK");
         document.getElementById("aideCli_ville").textContent = "";
     } else {
-        document.getElementById("aideCli_ville").textContent = "Champs incorect";
+        document.getElementById("aideCli_ville").textContent = "Champs incorrect";
         document.getElementById("aideCli_ville").style.color = "red";
         cli_ville.classList.remove("OK");
         cli_ville.classList.add("KO");
@@ -73,7 +73,7 @@ cli_pays.addEventListener("blur", function() {
         cli_pays.classList.add("OK");
         document.getElementById("aideCli_pays").textContent = "";
     } else {
-        document.getElementById("aideCli_pays").textContent = "Champs incorect";
+        document.getElementById("aideCli_pays").textContent = "Champs incorrect";
         document.getElementById("aideCli_pays").style.color = "red";
         cli_pays.classList.remove("OK");
         cli_pays.classList.add("KO");
