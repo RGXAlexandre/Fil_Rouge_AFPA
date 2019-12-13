@@ -5,32 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>GreenVillage, le projet CDA de Matthieu et Alexandre</title>
+
+    <!-- Titre du site apparaissant dans l'onglet du navigateur -->
+    <title>GreenVillage | Projet CDA </title>
+
+    <!-- Icone de VillageGreen apparaissant dans l'onglet du navigateur -->
+    <link rel="icon" type="image/png" href="/Fil_Rouge_AFPA/annexe/Charte/HEADER/logo village green.png" />
 
     <!-- Lien vers le CDN Boostrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
     <!-- Feuille de style pour le Site -->
     <link rel="stylesheet" href="/Fil_Rouge_AFPA/assets/css/styleSite.css">
+
     <!-- Feuille de style pour le HeaderFooter -->
     <link rel="stylesheet" href="/Fil_Rouge_AFPA/assets/css/styleHeaderFooter.css">
+
     <!-- Feuille de style pour le delire Rodger Federer -->
     <link rel="stylesheet" href="/Fil_Rouge_AFPA/assets/css/federer.css">
 
 </head>
 
-<!-- Création d'un conteneur pour l'ensemble de la page, permettant d'appliquer un fond -->
+<!-- Création d'un conteneur pour l'ensemble de la page, permettant d'appliquer un fond (Rayé noir) via "styleHeaderFooter.css"-->
 <div class="container-fluid" id="container-bordure">
 
-    <!-- Création d'un conteneur au centre de la page, permettant d'appliquer un fond -->
+    <!-- Création d'un conteneur au centre de la page, permettant d'appliquer un fond (Uni "creme") via "styleHeaderFooter.css"-->
     <div class="container" id="container-centre">
+        <!-- Création d'une ligne dans le conteneur -->
         <div class="row">
+            <!-- Création d'une colonne largeur 2, qui va accueillir le logo -->
             <div class="col-2">
                 <!-- Logo de VillageGreen, cliquable -->
                 <a href="<?php echo site_url("Accueil/Acc"); ?>"><img src="/Fil_Rouge_AFPA/annexe/Charte/HEADER/logo village green.png" alt="Logo VillageGreen" id="LogoVillageGreen" class="superpose"></a>
             </div>
 
+            <!-- Création d'une colonne largeur 10, qui va accueillir les Navbars -->
             <div class="col-10">
-                <!-- 3 Navbars empilés, couleurs de fond, justifier à droite -->
+                <!-- 1ere Navbars empilés sur 3, couleurs de fond, justifier à droite -->
                 <nav class="navbar navbar-light navbar-expand-lg nav justify-content-end" style="background-color: #e7e7e7;">
 
 
@@ -48,17 +59,17 @@
                                 <!-- Positionnement de data-toggle="modal" et  data-target="#myModal"dans le lien pour creer le point de depart de la Modal -->
                                 <a class="nav-link" href="" data-toggle="modal" data-target="#myModal">Espace Client</a>
 
-                                <!-- Début de la Modal -->
+                                <!-- Déclaration de la Modal -->
                                 <div id="myModal" class="modal fade" role="dialog">
                                     <div class="modal-dialog">
 
                                         <!-- Contenu de la Modal-->
                                         <div class="modal-content">
-
+                                            <!-- En-tete de la fenetre Modal -->
                                             <div class="modal-header">
                                                 <h4 class="modal-title">Espace Client</h4>
                                             </div>
-
+                                            <!-- Corps de la fenetre Modal. 1ere moitiée -->
                                             <div class="modal-body">
                                                 <div class="popForm popLeft">
                                                     <span>Etes-vous déjà client chez nous ?</span>
@@ -81,6 +92,7 @@
                                                     </form>
                                                 </div>
                                                 <hr>
+                                                <!-- Corps de la fenetre. 2eme moitiée -->
                                                 <div class="popForm popRight">
                                                     <span>Vous n'êtes pas client chez nous ?</span>
                                                     <br>
@@ -93,7 +105,7 @@
                                                     <a href="<?php echo site_url("Apropos/Apr"); ?>">Plus d'informations</a>
                                                 </div>
                                             </div>
-
+                                            <!-- Pied de la fenetre Modal -->
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
                                             </div>
@@ -106,6 +118,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="<?php echo site_url("Panier/Pan"); ?>">Panier</a>
                             </li>
+                            <!-- Positinnement d'un bouton cliquable en forme de panier, renvoyant sur controleur /Panier/Pan -->
                             <li>
                                 <a href="<?= site_url("Panier/Pan"); ?>"><img src="/Fil_Rouge_AFPA/annexe/Charte/HEADER/picto_panier.png" alt="LogoPanier" id="LogoPanier" class="superpose"></a>
                             </li>
@@ -114,6 +127,7 @@
                     </div>
                 </nav>
 
+                <!-- 2eme Navbars empilés sur 3, couleurs de fond, justifier à droite -->
                 <nav class="navbar navbar-light navbar-expand-lg nav justify-content-end" style="background-color: #d7d7d7;">
 
                     <div class="collapse navbar-collapse nav justify-content-end" id="navbarNav">
@@ -135,7 +149,7 @@
                         </ul>
                     </div>
                 </nav>
-
+                <!-- 3eme Navbars empilés sur 3, couleurs de fond, justifier à droite -->
                 <nav class="navbar navbar-light navbar-expand-lg nav justify-content-end" style="background-color: #666666;">
 
                     <div class="collapse navbar-collapse nav justify-content-end" id="navbarNav">

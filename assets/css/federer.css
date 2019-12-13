@@ -1,3 +1,4 @@
+ /* Feuille qui gere le FlipCard dans la page /Service/Ser */
  /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
  .flip-card {
     background-color: transparent;
@@ -20,6 +21,7 @@
   /* Do an horizontal flip when you move the mouse over the flip box container */
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg)
+    /* Mode Tony Hawk */
     /* transform: rotateY(1980deg) rotateX(360deg) rotateZ(720deg); */
   }
   

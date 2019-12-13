@@ -3,7 +3,7 @@
 <div class="container" id="container-centre">
     <div class="row">
         <div class="col-3">
-            <!-- Création d'une FlipCard, voir aussi federer.css dans /assets/css/ -->
+            <!-- Création d'une FlipCard, voir aussi Federer.css dans /assets/ -->
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
