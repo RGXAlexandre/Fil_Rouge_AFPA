@@ -4,9 +4,8 @@
     background-size: cover;
 
 }
-
+/* retrait de l'image, qui gere une "barre de vide" à chaque retour du fichier. Definition d'une couleur fixe pour le container. */
 #container-centre {
-    /* retrait de l'image, qui gere une "barre de vide" à chaque retour du fichier. Definition d'une couleur fixe pour le container. */
     background-color: #e7e7e7;
     Background-position: center;
     width: 100%;
@@ -23,7 +22,44 @@
     position: relative;
 }
 
-#imageFooter {
-    
+
+/* Pas encore utilisé */
+#imageFooter {   
+
 }
+
+/* Gestion du chevauchement du logo VillageGreen et de la NavBar dans le Header pour les formats Mobiles (Testés avec Firefox) */
+
+@media (max-width: 1199px) {
+    #LogoVillageGreen {
+        width: 220%;
+    }
+}
+
+@media (max-width: 991px) {
+    #LogoVillageGreen {
+        width: 180%;
+    }
+}
+
+@media (max-width: 767px) {
+    #LogoVillageGreen {
+        width: 250%;
+    }
+}
+
+@media (max-width: 575px) {
+    #LogoVillageGreen {
+        width: 280%;
+    }
+}
+
+@media (max-width: 480px) {
+    #LogoVillageGreen {
+        width: 150px;
+    }
+}
+
+
+
 
