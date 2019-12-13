@@ -162,7 +162,7 @@
                                 <a class="nav-link" href="<?= site_url('Categories/Cat2/') . 2 ?>">Les Guitares <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?= site_url('Categories/Cat2/') . 3 ?>">Christian Clavier</a>
+                                <a class="nav-link" href="<?= site_url('Categories/Cat2/') . 3 ?>">Christian</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= site_url('Categories/Cat2/') . 4 ?>">Cordes frottées</a>
