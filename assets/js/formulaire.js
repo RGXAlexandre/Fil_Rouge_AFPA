@@ -189,6 +189,6 @@ document.getElementById("submit").addEventListener("click", function(e) {
         window.alert("Votre formulaire a bien été envoyé!!!");
     } else {
         e.preventDefault();
-        window.alert("veuillez vérifier votre formulaire avant envoi");
+        window.alert("Veuillez vérifier votre formulaire avant envoi.");
     }
 });
