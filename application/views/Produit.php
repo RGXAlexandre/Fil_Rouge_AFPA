@@ -16,7 +16,7 @@
             <a href="#" class="btn btn-primary">Ajouter au panier</a>
 
             <!-- Ajout d'un bouton pour permettre au Clients du site de revenir au catalogue -->
-            <input type = "button" class="btn btn-secondary" value = "Retour aux catalogue"  onclick = "history.back()">
+            <input type = "button" class="btn btn-secondary" value = "Retour au catalogue"  onclick = "history.back()">
 
             <!-- Ajout d'un bouton pour permettre aux Admin du site de modifier le produit affiché -->
             <a href="<?= site_url('Produit/Mod/') . $ligne->pro_id ?>" class="btn btn-warning" role="button" class="cache">Modifier </a>

@@ -41,13 +41,21 @@ class Produit extends CI_controller {
     }
 
     public function Ajo () {
+        
+        // requete SQL
 
         $this->load->view("header.php");
         $this->load->view("Ajout.php");
         $this->load->view("footer.php");
     }
 
-    public function Mod () {
+    public function Mod ($id) {
+
+        $requete = $this->db->query("select * from produit natural join rubrique where pro_id=?", array($id));
+        $data["produit"] = $requete->row();
+
+        $requete = $this->db->query("select * from rubrique");
+        $data["rubriques"] = $requete->result();
 
         $this->load->view("header.php");
         $this->load->view("Modifier.php");
@@ -55,6 +63,8 @@ class Produit extends CI_controller {
     }
 
     public function Sup () {
+
+        // requete SQL
 
         $this->load->view("header.php");
         $this->load->view("Supprimer.php");

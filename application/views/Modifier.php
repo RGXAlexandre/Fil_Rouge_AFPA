@@ -11,6 +11,13 @@
             Libelle long <input class="form-control" type="text" name="pro_libelle_long" placeholder="Entrez une description du produit">
         </div>
         <div class="col-12">
+            Rubrique <select class="form-control" name="pro_rub_id" size="1" value="<?= $produit->rub_nom ?>">
+                <?php foreach ($rubriques as $rubrique) : ?>
+                    <option <?= ($rubrique->rub_id == $produit->pro_rub_id) ? "selected" : "" ?> value="<?= $rubrique->rub_id ?>"><?= $rubrique->rub_nom ?></option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+        <div class="col-12">
             Prix d'achat <input class="form-control" type="text" name="pro_prix_achat" placeholder="Entrez le prix d'achat">
         </div>
         <div class="col-12">
