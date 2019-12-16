@@ -1,4 +1,4 @@
-var regTexte50 = new RegExp("^[a-zA-Z0-9'-àéèêâûùë]{1,50}$");
+var regTexte50 = new RegExp("^[a-zA-Z0-9\'-àéèêâûùë ]{1,50}$");
 var regMail = new RegExp("^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$");
 var regCP = new RegExp("^[0-9]{5}$");
 var regTelephone = new RegExp("^[0-9]{10,}$");
@@ -43,7 +43,7 @@ cli_rue.addEventListener("blur", function() {
         cli_rue.classList.add("OK");
         document.getElementById("aideCli_rue").textContent = "";
     } else {
-        document.getElementById("aideCli_rue").textContent = "Champs incorrect";
+        document.getElementById("aideCli_rue").textContent = "Champs incorrect, nous ne savons pas gérer les retours à la ligne !";
         document.getElementById("aideCli_rue").style.color = "red";
         cli_rue.classList.remove("OK");
         cli_rue.classList.add("KO");
@@ -95,7 +95,7 @@ CP.addEventListener("blur", function() {
     }
 });
 
-var mail = document.getElementById("cli_email");
+var mail = document.getElementById("cli_mail");
 
 mail.addEventListener("change", function() {
     console.log('change mail');

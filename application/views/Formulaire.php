@@ -1,4 +1,4 @@
-<form action="https://bienvu.net/script.php" form="form-group">
+<form action="<?= site_url('Formulaire/For') ?>" form="form-group" enctype="multipart/form-data" method="POST">
 
 <div class="row">
     <legend>Formulaire d'inscription</legend>
@@ -60,10 +60,10 @@
 </div>
 <div class="row">
     <div class="col-sm-4 col-lg-2">
-        <label for="cli_email">Email *</label>
+        <label for="cli_mail">Email *</label>
     </div>
     <div class="col-sm-8 col-lg-4">
-        <input class="form-control" name="cli_email" type="text" id="cli_email">
+        <input class="form-control" name="cli_mail" type="text" id="cli_mail">
         <span id="aideCli_email"></span>
     </div>
 
