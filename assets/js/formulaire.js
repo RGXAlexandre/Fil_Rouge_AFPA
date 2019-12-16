@@ -182,7 +182,7 @@ cli_password2.addEventListener("blur", function() {
 //     }
 // });
 
-
+// Pour toi , FRC =)
 document.getElementById("submit").addEventListener("click", function(e) {
     console.log("test")
     if (regTexte50.test(cli_nom.value) && regTexte50.test(cli_prenom.value) && regTexte50.test(cli_rue.value) && regCP.test(CP.value) && regTexte50.test(cli_ville.value) && regTexte50.test(cli_pays.value) && regMail.test(mail.value) && regTelephone.test(phone.value) && regPassword.test(cli_password.value) && (cli_password.value == cli_password2.value)) {
