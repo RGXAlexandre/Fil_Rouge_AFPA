@@ -40,5 +40,26 @@ class Produit extends CI_controller {
         $this->load->view("footer.php");
     }
 
+    public function Ajo () {
+
+        $this->load->view("header.php");
+        $this->load->view("Ajout.php");
+        $this->load->view("footer.php");
+    }
+
+    public function Mod () {
+
+        $this->load->view("header.php");
+        $this->load->view("Modifier.php");
+        $this->load->view("footer.php");
+    }
+
+    public function Sup () {
+
+        $this->load->view("header.php");
+        $this->load->view("Supprimer.php");
+        $this->load->view("footer.php");
+    }
+
 }
 ?>

@@ -1,6 +1,9 @@
 <div class="row">
     <div class="col-12">
-        <h2>Liste de nos produits</h2>
+        <h2 style="float:left">Liste de nos produits</h2>
+
+        <!-- Ajout d'un bouton pour permettre aux Admin du site d'ajouter un produit. -->
+        <a href="<?= site_url('Produit/Ajo/') ?>" class="btn btn-warning" role="button" aria-pressed="true" style="float:right" class="cache">Ajouter un produit</a>
     </div>
 </div>
 <br>
@@ -13,11 +16,10 @@
                 </div>
                 <img class="card-img-top h155" src="<?= base_url("assets/images/") . $ligne->pro_photo ?>" alt="<?= $ligne->pro_photo ?>">
                 <div class="card-body">
-                    <p class="card-text">Prix : <?= number_format($ligne->pro_prix_achat, 2,',',' ')?> €</p>
+                    <p class="card-text">Prix : <?= number_format($ligne->pro_prix_achat, 2, ',', ' ') ?> €</p>
                 </div>
                 <div class="card-footer text-center">
                     <a href="<?= site_url('Produit/pro3/') . $ligne->pro_id ?>" class="btn btn-primary">Détails</a>
-
                 </div>
             </div>
         </div>

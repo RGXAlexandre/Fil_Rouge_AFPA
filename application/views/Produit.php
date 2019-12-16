@@ -14,7 +14,15 @@
             <p>Prix : <?= number_format($ligne->pro_prix_achat, 2,',',' ')?> €</p>
             <hr>
             <a href="#" class="btn btn-primary">Ajouter au panier</a>
-            <!-- <a href="<?= site_url('Catégories/Cat2/') . $rubrique[0] ?>" class="btn btn-secondary">Retour</a> -->
+
+            <!-- Ajout d'un bouton pour permettre au Clients du site de revenir au catalogue -->
+            <input type = "button" class="btn btn-secondary" value = "Retour aux catalogue"  onclick = "history.back()">
+
+            <!-- Ajout d'un bouton pour permettre aux Admin du site de modifier le produit affiché -->
+            <a href="<?= site_url('Produit/Mod/') . $ligne->pro_id ?>" class="btn btn-warning" role="button" class="cache">Modifier </a>
+
+            <!-- Ajout d'un bouton pour permettre aux Admin du site de supprimer le produit affiché -->
+            <a href="<?= site_url('Produit/Sup/'). $ligne->pro_id?>" class="btn btn-danger" class="cache" > Supprimer </a>
         </div>
     </div>
     <br>
