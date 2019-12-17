@@ -1,5 +1,9 @@
 <h2>Echec de login</h2>
-Redirection normal en cas d'echec de login
+Redirection normal en cas d'echec de login.
+<br>
+<hr>
+<h2>Oubli de mot de passe </h2>
+Redirection parfaitement normale et voulue (et potentiellement définitive) en cas d'oubli de mot de passe.
 <br>
 <hr>
 <h2>RTFM (expression)</h2>
@@ -26,4 +30,4 @@ Cette expression a été créée avant l'avènement d'Internet et de Google, alo
     <br>
 
 Toutes ces nouvelles expressions indiquent que la réponse à une question peut être facilement trouvée sur Internet via une recherche dans un moteur de recherche, et/ou dans les tutoriels dédiés.
-<hr> 
+<hr>

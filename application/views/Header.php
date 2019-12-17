@@ -88,7 +88,7 @@
                                         </div>
                                     </div>
 
-                                <!-- Si un client n'est pas connecté, affichage d'un Modal avec une sous modal avec un formulaire de connexion,
+                                    <!-- Si un client n'est pas connecté, affichage d'un Modal avec une sous modal avec un formulaire de connexion,
                                 et une sous modal avec un bouton envoyant vers le formulaire d'inscription-->
                                 <?php else : ?>
                                     <!-- Déclaration de la Modal -->
@@ -115,14 +115,10 @@
                                                                 <input type="text" class="form-control" id="email" name="cli_mail" placeholder="Adresse E-mail">
                                                                 <label for="mdp"></label>
                                                                 <input type="password" class="form-control" id="password" name="cli_password" placeholder="Mot de passe">
-                                                                <div class="form-check">
-                                                                    <input type="checkbox" class="form-check-input" name="rememberMe" id="rememberMe">
-                                                                    <label class="form-check-label" for="rememberMe">Rester connecté</label>
-                                                                </div>
                                                             </div>
                                                             <button type="submit" class="btn btn-success">Se connecter maintenant</button>
                                                             <br>
-                                                            <a href="">Vous avez oublié votre mot de passe ?</a>
+                                                            <a href="<?php echo site_url("Aide/Aid"); ?>">Vous avez oublié votre mot de passe ?</a>
 
                                                         </form>
 
@@ -150,7 +146,7 @@
 
                                         </div>
                                     </div>
-                                <!-- !! Fin de la gestion de la vue en fonction du status du login !! -->
+                                    <!-- !! Fin de la gestion de la vue en fonction du status du login !! -->
                                 <?php endif; ?>
                             </li>
                             <li class="nav-item">
