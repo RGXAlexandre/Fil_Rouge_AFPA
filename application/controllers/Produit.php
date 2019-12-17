@@ -21,7 +21,7 @@ class Produit extends CI_controller {
     }
     public function Pro2 ($id) {
 
-        $requete = $this->db->query("select * from produit where pro_rub_id = ?", array($id));
+        $requete = $this->db->query("select * from produit JOIN rubrique  ON rub_id=pro_rub_id where pro_rub_id = ?", array($id));
 
         $data["produits"] = $requete->result();
         
