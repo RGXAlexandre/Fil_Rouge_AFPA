@@ -209,18 +209,20 @@ insert into fournisseur (fou_id, fou_nom, fou_rue, fou_code_postal, fou_ville, f
 insert into fournisseur (fou_id, fou_nom, fou_rue, fou_code_postal, fou_ville, fou_pays) VALUES (6, 'Voomm', '04 Heath Street', '37205 CEDEX 3', 'Tours', 'France');
 insert into fournisseur (fou_id, fou_nom, fou_rue, fou_code_postal, fou_ville, fou_pays) VALUES (7, 'SML Accessoires', '51 rue de l''anis', '13051', 'Pastaga', 'France');
 
-insert into employé (emp_prenom, emp_nom, emp_password) values ('Celestyna', 'Stenbridge', 'Stenbridge');
-insert into employé (emp_prenom, emp_nom, emp_password) values ('Jermaine', 'Pasek', 'Pasek');
-insert into employé (emp_prenom, emp_nom, emp_password) values ('Lian', 'Kolyagin', 'Kolyagin');
-insert into employé (emp_prenom, emp_nom, emp_password) values ('Jobina', 'MacTrustey', 'MacTrustey');
-insert into employé (emp_prenom, emp_nom, emp_password) values ('Sayers', 'Hugo', 'Hugo');
-insert into employé (emp_prenom, emp_nom, emp_password) values ('Nataniel', 'Liddel', 'Liddel');
-insert into employé (emp_prenom, emp_nom, emp_password) values ('Vergil', 'Torricina', 'Torricina');
-insert into employé (emp_prenom, emp_nom, emp_password) values ('Krisha', 'Folcarelli', 'Folcarelli');
-insert into employé (emp_prenom, emp_nom, emp_password) values ('Yvette', 'Burrows', 'Burrows');
-insert into employé (emp_prenom, emp_nom, emp_password) values ('Dory', 'Maso', 'Maso');
-insert into employé (emp_prenom, emp_nom, emp_password) values ('Pattin', 'Whalley', 'Whalley');
-insert into employé (emp_prenom, emp_nom, emp_password) values ('Giovanni', 'Berr', 'Berr');
+insert into employé (emp_prenom, emp_nom, emp_password, emp_mail) values ('Celestyna', 'Stenbridge', 'Stenbridge', concat(substring(emp_prenom,1,3),'.',emp_nom,'@mail.com'));
+insert into employé (emp_prenom, emp_nom, emp_password, emp_mail) values ('Jermaine', 'Pasek', 'Pasek', concat(substring(emp_prenom,1,3),'.',emp_nom,'@mail.com'));
+insert into employé (emp_prenom, emp_nom, emp_password, emp_mail) values ('Lian', 'Kolyagin', 'Kolyagin', concat(substring(emp_prenom,1,3),'.',emp_nom,'@mail.com'));
+insert into employé (emp_prenom, emp_nom, emp_password, emp_mail) values ('Jobina', 'MacTrustey', 'MacTrustey', concat(substring(emp_prenom,1,3),'.',emp_nom,'@mail.com'));
+insert into employé (emp_prenom, emp_nom, emp_password, emp_mail) values ('Sayers', 'Hugo', 'Hugo', concat(substring(emp_prenom,1,3),'.',emp_nom,'@mail.com'));
+insert into employé (emp_prenom, emp_nom, emp_password, emp_mail) values ('Nataniel', 'Liddel', 'Liddel', concat(substring(emp_prenom,1,3),'.',emp_nom,'@mail.com'));
+insert into employé (emp_prenom, emp_nom, emp_password, emp_mail) values ('Vergil', 'Torricina', 'Torricina', concat(substring(emp_prenom,1,3),'.',emp_nom,'@mail.com'));
+insert into employé (emp_prenom, emp_nom, emp_password, emp_mail) values ('Krisha', 'Folcarelli', 'Folcarelli', concat(substring(emp_prenom,1,3),'.',emp_nom,'@mail.com'));
+insert into employé (emp_prenom, emp_nom, emp_password, emp_mail) values ('Yvette', 'Burrows', 'Burrows', concat(substring(emp_prenom,1,3),'.',emp_nom,'@mail.com'));
+insert into employé (emp_prenom, emp_nom, emp_password, emp_mail) values ('Dory', 'Maso', 'Maso', concat(substring(emp_prenom,1,3),'.',emp_nom,'@mail.com'));
+insert into employé (emp_prenom, emp_nom, emp_password, emp_mail) values ('Pattin', 'Whalley', 'Whalley', concat(substring(emp_prenom,1,3),'.',emp_nom,'@mail.com'));
+insert into employé (emp_prenom, emp_nom, emp_password, emp_mail) values ('Giovanni', 'Berr', 'Berr', concat(substring(emp_prenom,1,3),'.',emp_nom,'@mail.com'));
+
+
 
 
 
