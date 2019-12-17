@@ -15,7 +15,7 @@
             <hr>
 
             
-            <a href="<?= site_url('Panier/Ajout/') . $ligne->pro_id  ?>" class="btn btn-primary">Ajouter au panier </a>
+            <a href="<?= site_url('Panier/Ajout/').$ligne->pro_id  ?>" class="btn btn-primary">Ajouter au panier </a>
 
 
             <!-- Ajout d'un bouton pour permettre au Clients du site de revenir au catalogue selon qu'ils viennent de la liste(1 produit) ou de la sous-rubrique (plusieurs produits) -->

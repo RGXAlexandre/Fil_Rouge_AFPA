@@ -4,7 +4,7 @@ class Panier extends CI_controller {
     public function Ajout ($id) {
 
         $produit = $this->db->query("select * from produit where pro_id=?", $id)->row();
-
+        
         $data = [
             "pro_id" => $produit->pro_id,
             "pro_libelle_court" => $produit->pro_libelle_court,
@@ -15,7 +15,17 @@ class Panier extends CI_controller {
 
         $this->basket->add($data);
 
-        redirect(site_url("Produit/Pro3/".$produit->pro_id));
+        
+        redirect(site_url("Panier/Pan"));
+
+        
+        // if ($produit == 1) {
+        //     redirect(site_url("Produit/Pro3/".$produit->pro_id));
+        // } else { 
+        //     redirect(site_url('Produit/pro2/').$produit->pro_rub_id);
+        // } 
+
+        
 
     }
 

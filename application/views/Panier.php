@@ -8,7 +8,7 @@
     </div>
     <div class="col-12 col-md-3 col-lg-2">
         <?php if (count($panier) != 0) { ?>
-            <a href="<?= site_url('Panier/Supprimer') ?>" style="text-align: right" class="btn btn-danger">Vider Panier</a>
+            <a href="<?= site_url('Panier/Supprimer') ?>" style="text-align: right" class="btn btn-outline-secondary">Vider Panier</a>
         <?php } ?>
     </div>
 </div>
@@ -28,7 +28,7 @@
                     <h3> <?= $ligne["element"]["pro_libelle_court"] ?></h3>
                 </div>
                 <div class="col-2">
-                    <a href="<?= site_url('Panier/SupprimerLigne/') . $ligne["element"]["pro_id"]  ?>" class="btn btn-danger" class="cache"> x </a>
+                    <a href="<?= site_url('Panier/SupprimerLigne/') . $ligne["element"]["pro_id"]  ?>" class="btn btn-outline-secondary" class="cache"> x </a>
                 </div>
             </div>
             <br>
