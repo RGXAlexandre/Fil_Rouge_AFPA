@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$config['basket'] = [ 'id_key' => 'pro_id' ];
 /*
 |--------------------------------------------------------------------------
 | Base Site URL

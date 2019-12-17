@@ -1,11 +1,10 @@
 <?php
 class Panier extends CI_controller {
 
-    public function Pan () {
+    public function Ajout () {
         
-        $this->load->view("header.php");
-        $this->load->view("panier.php");
-        $this->load->view("footer.php");
+        redirect(site_url("Produit/Pro"));
+
     }
 }
 ?>

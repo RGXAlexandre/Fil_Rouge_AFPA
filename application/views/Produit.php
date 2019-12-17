@@ -13,7 +13,7 @@
             <p><?= $ligne->pro_libelle_long ?></p>
             <p>Prix : <?= number_format($ligne->pro_prix_achat, 2,',',' ')?> €</p>
             <hr>
-            <a href="#" class="btn btn-primary">Ajouter au panier</a>
+            <a href="site_url('Panier/Ajout')" class="btn btn-primary">Ajouter au panier</a>
 
             <!-- Ajout d'un bouton pour permettre au Clients du site de revenir au catalogue -->
             <input type = "button" class="btn btn-secondary" value = "Retour au catalogue"  onclick = "history.back()">
