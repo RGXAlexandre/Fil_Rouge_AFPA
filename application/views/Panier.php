@@ -1,14 +1,19 @@
 <div class="row">
     <div class="col-12 col-md-9 col-lg-10">
-        <h1 style="text-align: left">Contenu de votre Panier.php</h1>
+        <?php if (count($panier) != 0) { ?>
+            <h1 style="text-align: left">Contenu de votre Panier.php</h1>
+        <?php } else { ?>
+            <h1 style="text-align: left">Votre panier est vide <span style='font-size:50px;'>&#128532;</span>  </h1>
+        <?php } ?>
     </div>
     <div class="col-12 col-md-3 col-lg-2">
-        <a href="<?= site_url('Panier/Supprimer') ?>" style="text-align: right" class="btn btn-danger">Vider Panier</a>
+        <?php if (count($panier) != 0) { ?>
+            <a href="<?= site_url('Panier/Supprimer') ?>" style="text-align: right" class="btn btn-danger">Vider Panier</a>
+        <?php } ?>
     </div>
 </div>
 <hr>
-<!-- <?= print_r($panier) ?> -->
-<!-- <hr> -->
+
 <br>
 
 
