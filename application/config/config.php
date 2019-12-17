@@ -4,18 +4,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $config['basket'] = [ 'id_key' => 'pro_id' ];
 
 /* ligne de config pour la librairie Auth, version client */
-$config['auth'] = [
+// $config['auth'] = [
 	
-    'client' => [
+//     'client' => [
    
-        'table'     => 'client',
+//         'table'     => 'client',
    
-        'login'     => 'cli_mail',
+//         'login'     => 'cli_mail',
    
-        'password'  => 'cli_password',
+//         'password'  => 'cli_password',
    
-    ]
-];
+//     ]
+// ];
 
 /* ligne de config pour la librairie Auth, version employé */
 // $config['auth'] = [
@@ -30,6 +30,21 @@ $config['auth'] = [
    
 //     ]
 // ];
+
+$config['auth'] = [
+          'client' => [
+              'table'     =>  'client',
+              'login'     =>  'cli_mail',
+              'password'  =>  'cli_password'
+          ], 
+          'employé' => [
+              'table'     =>  'employé',
+              'login'     =>  'emp_mail',
+              'password'  =>  'emp_password',
+              'encoding'  =>  'bcrypt'
+          ]
+     ];
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
