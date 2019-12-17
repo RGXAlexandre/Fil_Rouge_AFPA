@@ -60,61 +60,98 @@
                                 <!-- Positionnement de data-toggle="modal" et  data-target="#myModal"dans le lien pour creer le point de depart de la Modal -->
                                 <a class="nav-link" href="" data-toggle="modal" data-target="#myModal">Espace Client</a>
 
-                                <!-- Déclaration de la Modal -->
-                                <div id="myModal" class="modal fade" role="dialog">
-                                    <div class="modal-dialog">
+                                <!-- !! Gestion de la vue en fonction du status du login !! -->
+                                <!-- Si un client est connecté, affichage d'un Modal avec uniquement un bouton de déconnexion -->
+                                <?php if ($this->auth->is_logged()) : ?>
+                                    <div id="myModal" class="modal fade" role="dialog">
 
-                                        <!-- Contenu de la Modal-->
-                                        <div class="modal-content">
-                                            <!-- En-tete de la fenetre Modal -->
-                                            <div class="modal-header">
-                                                <h4 class="modal-title">Espace Client</h4>
-                                            </div>
-                                            <!-- Corps de la fenetre Modal. 1ere moitiée -->
-                                            <div class="modal-body">
-                                                <div class="popForm popLeft">
-                                                    <span>Etes-vous déjà client chez nous ?</span>
-                                                    <form action="" method="post" accept-charset="utf-8">
+                                        <div class="modal-dialog">
 
-                                                        <div class="form-group">
-                                                            <label for="user"></label>
-                                                            <input type="email" class="form-control" id="email" name="email" placeholder="Adresse E-mail">
-                                                            <label for="mdp"></label>
-                                                            <input type="password" class="form-control" id="password" name="password" placeholder="Mot de passe">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" name="rememberMe" id="rememberMe">
-                                                                <label class="form-check-label" for="rememberMe">Rester connecté</label>
-                                                            </div>
-                                                        </div>
-                                                        <button type="submit" class="btn btn-success">Se connecter maintenant</button>
+                                            <!-- Contenu de la Modal-->
+                                            <div class="modal-content">
+                                                <!-- En-tete de la fenetre Modal -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Espace Client</h4>
+                                                </div>
+                                                <!-- Corps de la fenetre Modal. 1ere moitiée -->
+                                                <div class="modal-body">
+                                                    <div class="popForm popLeft">
+                                                        <a href=<?= site_url("Connexion/logout") ?> class="btn btn-secondary btn-sm">Se déconnecter</a>
                                                         <br>
-                                                        <a href="">Vous avez oublié votre mot de passe ?</a>
-
-                                                    </form>
+                                                    </div>
                                                 </div>
-                                                <hr>
-                                                <!-- Corps de la fenetre. 2eme moitiée -->
-                                                <div class="popForm popRight">
-                                                    <span>Vous n'êtes pas client chez nous ?</span>
-                                                    <br>
-                                                    <br>
-
-                                                    <p>En tant que client Village Green, vous pouvez suivre vos envois, lire des "tests produits" exclusifs, évaluer des produits, déposer des petites annonces, gérer vos chèques-cadeaux, devenir partenaire et bien plus encore.</p>
-
-                                                    <a type="button" class="btn btn-success" href="<?php echo site_url("Formulaire/For"); ?>">S'inscrire</a>
-                                                    <br>
-                                                    <a href="<?php echo site_url("Apropos/Apr"); ?>">Plus d'informations</a>
+                                                <!-- Pied de la fenetre Modal -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
                                                 </div>
                                             </div>
-                                            <!-- Pied de la fenetre Modal -->
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+                                        </div>
+                                    </div>
+
+                                <!-- Si un client n'est pas connecté, affichage d'un Modal avec une sous modal avec un formulaire de connexion,
+                                et une sous modal avec un bouton envoyant vers le formulaire d'inscription-->
+                                <?php else : ?>
+                                    <!-- Déclaration de la Modal -->
+                                    <div id="myModal" class="modal fade" role="dialog">
+
+                                        <div class="modal-dialog">
+
+                                            <!-- Contenu de la Modal-->
+                                            <div class="modal-content">
+                                                <!-- En-tete de la fenetre Modal -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Espace Client</h4>
+                                                </div>
+                                                <!-- Corps de la fenetre Modal. 1ere moitiée -->
+                                                <div class="modal-body">
+                                                    <div class="popForm popLeft">
+
+
+                                                        <span>Etes-vous déjà client chez nous ?</span>
+                                                        <form action="<?php echo site_url("Connexion/Log"); ?>" method="post" accept-charset="utf-8">
+
+                                                            <div class="form-group">
+                                                                <label for="user"></label>
+                                                                <input type="text" class="form-control" id="email" name="cli_mail" placeholder="Adresse E-mail">
+                                                                <label for="mdp"></label>
+                                                                <input type="password" class="form-control" id="password" name="cli_password" placeholder="Mot de passe">
+                                                                <div class="form-check">
+                                                                    <input type="checkbox" class="form-check-input" name="rememberMe" id="rememberMe">
+                                                                    <label class="form-check-label" for="rememberMe">Rester connecté</label>
+                                                                </div>
+                                                            </div>
+                                                            <button type="submit" class="btn btn-success">Se connecter maintenant</button>
+                                                            <br>
+                                                            <a href="">Vous avez oublié votre mot de passe ?</a>
+
+                                                        </form>
+
+                                                    </div>
+                                                    <hr>
+                                                    <!-- Corps de la fenetre. 2eme moitiée -->
+                                                    <div class="popForm popRight" id="popRight">
+                                                        <span>Vous n'êtes pas client chez nous ?</span>
+                                                        <br>
+                                                        <br>
+
+                                                        <p>En tant que client Village Green, vous pouvez suivre vos envois, lire des "tests produits" exclusifs, évaluer des produits, déposer des petites annonces, gérer vos chèques-cadeaux, devenir partenaire et bien plus encore.</p>
+
+                                                        <a type="button" class="btn btn-success" href="<?php echo site_url("Formulaire/For"); ?>">S'inscrire</a>
+                                                        <br>
+                                                        <a href="<?php echo site_url("Apropos/Apr"); ?>">Plus d'informations</a>
+                                                    </div>
+                                                </div>
+                                                <!-- Pied de la fenetre Modal -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+                                                </div>
+
                                             </div>
 
                                         </div>
-
                                     </div>
-                                </div>
+                                <!-- !! Fin de la gestion de la vue en fonction du status du login !! -->
+                                <?php endif; ?>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?php echo site_url("Panier/Pan"); ?>">Panier</a>
@@ -175,6 +212,12 @@
             </div>
         </div>
 
+        <br>
         <hr>
 
-        <body>
+
+
+        <div>
+
+
+            <body>

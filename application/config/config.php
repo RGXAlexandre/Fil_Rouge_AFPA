@@ -1,7 +1,35 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+/* ligne de config pour la librairie Basket */
 $config['basket'] = [ 'id_key' => 'pro_id' ];
+
+/* ligne de config pour la librairie Auth, version client */
+$config['auth'] = [
+	
+    'client' => [
+   
+        'table'     => 'client',
+   
+        'login'     => 'cli_mail',
+   
+        'password'  => 'cli_password',
+   
+    ]
+];
+
+/* ligne de config pour la librairie Auth, version employé */
+// $config['auth'] = [
+	
+//     'employe' => [
+   
+//         'table'     => 'employé',
+   
+//         'login'     => 'emp_mail',
+   
+//         'password'  => 'emp_password',
+   
+//     ]
+// ];
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
