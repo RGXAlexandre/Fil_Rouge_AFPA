@@ -1,4 +1,3 @@
-
 <?php foreach ($produits as $ligne) { ?>
     <div class="row">
         <div class="col-3">
@@ -11,8 +10,8 @@
             <p>Prix : <?= number_format($ligne->pro_prix_achat, 2, ',', ' ') ?> €</p>
             <hr>
 
-            
-            <a href="<?= site_url('Panier/Ajout/').$ligne->pro_id  ?>" class="btn btn-primary">Ajouter au panier </a>
+
+            <a href="<?= site_url('Panier/Ajout/') . $ligne->pro_id  ?>" class="btn btn-primary">Ajouter au panier </a>
 
 
             <!-- Ajout d'un bouton pour permettre au Clients du site de revenir au catalogue selon qu'ils viennent de la liste(1 produit) ou de la sous-rubrique (plusieurs produits) -->
@@ -28,12 +27,18 @@
             <!-- <p> <?= count($produits) ?> </p> -->
 
             <!-- Ajout d'un bouton pour permettre aux Admin du site de modifier le produit affiché -->
-            <a href="<?= site_url('Produit/Mod/') . $ligne->pro_id ?>" class="btn btn-warning" role="button" class="cache">Modifier </a>
+            <?php if ($this->auth->is_type('employé')) : ?>
+                <a href="<?= site_url('Produit/Mod/') . $ligne->pro_id ?>" class="btn btn-warning" role="button" class="cache">Modifier </a>
+            <?php endif; ?>
 
             <!-- Ajout d'un bouton pour permettre aux Admin du site de supprimer le produit affiché -->
-            <a href="<?= site_url('Produit/Sup/') . $ligne->pro_id ?>" class="btn btn-danger" class="cache"> Supprimer </a>
+            <?php if ($this->auth->is_type('employé')) : ?>
+                <a href="<?= site_url('Produit/Sup/') . $ligne->pro_id ?>" class="btn btn-danger" class="cache"> Supprimer </a>
+            <?php endif; ?>
+            
         </div>
     </div>
     <br>
 
 <?php } ?>
+
