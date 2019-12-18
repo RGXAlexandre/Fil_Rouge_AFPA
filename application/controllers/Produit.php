@@ -1,40 +1,40 @@
 <?php
 class Produit extends CI_controller {
 
+    // méthode pour afficher la liste de tous les produits de la BDD
     public function Pro () {
 
+        //  je récupère sous forme de tableau la liste des produits
         $requete = $this->db->query("select * from produit");
-
         $data["produits"] = $requete->result();
 
         // $requete = $this->db->query("select rub_id_1 from rubrique where rub_id = ?", array($id));
-
         // $data["rubrique"] = $requete->row();
 
-
-
-
-        
+        // ATTENTION à bien insérer le tableau pour le chargement de la vue liste.php !!!
         $this->load->view("header.php");
         $this->load->view("liste.php", $data);
         $this->load->view("footer.php");
     }
+
+    // méthode pour afficher la liste de tous les produits d'une sous-rubrique
     public function Pro2 ($id) {
 
         $requete = $this->db->query("select * from produit JOIN rubrique  ON rub_id=pro_rub_id where pro_rub_id = ?", array($id));
-
         $data["produits"] = $requete->result();
         
+        // ATTENTION à bien insérer le tableau pour le chargement de la vue liste.php !!!
         $this->load->view("header.php");
         $this->load->view("produit.php", $data);
         $this->load->view("footer.php");
     }
 
+    // méthode pour afficher le détail d'un produit
     public function Pro3 ($id) {
 
         $requete = $this->db->query("select * from produit where pro_id = ?", array($id));
-
         $data["produits"] = $requete->result();
+
         $this->load->view("header.php");
         $this->load->view("produit.php", $data);
         $this->load->view("footer.php");
@@ -45,11 +45,9 @@ class Produit extends CI_controller {
         // Protection de la page : accessible pour le groupe employé uniquement
         // $this->auth->authorized(["employé"], "aut/login");
         
-        // requete SQL pour les selects des rubriques et fournisseurs existants dans la vue
-
+        // requete SQL pour les selects des rubriques et fournisseurs existants dans la vue pour afficher la liste des fournisseurs et sous rubrique existantes
         $requete = $this->db->query("select * from rubrique where rub_id_1 is not null");
         $data["rubriques"] = $requete->result();
-
 
         $requete = $this->db->query("select * from fournisseur");
         $data["fournisseurs"] = $requete->result();
@@ -100,6 +98,7 @@ class Produit extends CI_controller {
                 $this->db->where('pro_id', $id);
                 $this->db->update('produit');
             }
+            // redirection sur la page des produits une fois l'élément ajouté
             redirect(site_url("Produit/Pro"));
         } else {
         $this->load->view("header.php");
@@ -110,12 +109,14 @@ class Produit extends CI_controller {
 
     public function Mod ($id) {
 
+        // on récupère toutes les informations existantes du produit que l'on souhaite modifiés
         // Protection de la page : accessible pour le groupe employé uniquement
         // $this->auth->authorized(["employé"], "aut/login");
 
         $requete = $this->db->query("select * from produit join rubrique ON pro_rub_id=rub_id join fournisseur ON pro_fou_id=fou_id where pro_id=?", array($id));
         $data["produit"] = $requete->row();
 
+        // on récupère la liste des fournisseurs et sous-rubriques existantes
         $requete = $this->db->query("select * from rubrique where rub_id_1 is not null");
         $data["rubriques"] = $requete->result();
 
