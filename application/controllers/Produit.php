@@ -41,6 +41,9 @@ class Produit extends CI_controller {
     }
 
     public function Ajo () {
+
+        // Protection de la page : accessible pour le groupe employé uniquement
+        // $this->auth->authorized(["employé"], "aut/login");
         
         // requete SQL pour les selects des rubriques et fournisseurs existants dans la vue
 
@@ -107,6 +110,9 @@ class Produit extends CI_controller {
 
     public function Mod ($id) {
 
+        // Protection de la page : accessible pour le groupe employé uniquement
+        // $this->auth->authorized(["employé"], "aut/login");
+
         $requete = $this->db->query("select * from produit join rubrique ON pro_rub_id=rub_id join fournisseur ON pro_fou_id=fou_id where pro_id=?", array($id));
         $data["produit"] = $requete->row();
 
@@ -169,6 +175,9 @@ class Produit extends CI_controller {
     }
 
     public function Sup ($id) {
+
+        // Protection de la page : accessible pour le groupe employé uniquement
+        // $this->auth->authorized(["employé"], "aut/login");
 
         $requete = $this->db->query("select * from produit join rubrique ON pro_rub_id=rub_id join fournisseur ON pro_fou_id=fou_id where pro_id=?", array($id));
         $data["produit"] = $requete->row();
