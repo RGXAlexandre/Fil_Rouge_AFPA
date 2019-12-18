@@ -4,7 +4,8 @@
     <div class="col-12">
         <h1>Ajouter un produit</h1>
     </div>
-    <?php echo validation_errors(); ?>
+    <!-- permet d'afficher les erreurs pour maintenance ou test -->
+    <!-- <?php echo validation_errors(); ?> -->
     <div>
 
     </div>
@@ -18,7 +19,7 @@
 
         <!-- TODO arriver à choisir la rubrique qui personnalise le select sous rubrique... -->
 
-
+        <!-- on affiche la liste des sous rubriques graçe à la requete dans la méthode add du controleur produit -->
         <div class="col-12">
             Sous-Rubrique <select class="form-control" name="pro_rub_id" size="1">
                 <?php foreach ($rubriques as $rubrique) : ?>
@@ -29,6 +30,7 @@
 
         <div class="col-12">
             Fournisseur <select class="form-control" name="pro_fou_id" size="1">
+                <!-- on récupère depuis notre méthode -->
                 <?php foreach ($fournisseurs as $fournisseur) : ?>
                     <option value="<?= $fournisseur->fou_id ?>"><?= $fournisseur->fou_nom ?></option>
                 <?php endforeach; ?>

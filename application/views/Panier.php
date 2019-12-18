@@ -63,10 +63,12 @@
 <?php endforeach; ?>
 <div class="row">
     <div class="col-12">
+        <?php if($this->basket->get_price_sum("pro_prix_achat")>0) {?>
         <h4 class="text-right"> Total de votre commande : <?= number_format($this->basket->get_price_sum("pro_prix_achat"), 2, ',', ' ') ?> € </h4>
+        <?php }?>
     </div>
     <div class="col-12 text-center">
-        <a href="" class="btn btn-success btn-lg text-center"> Validez votre commande</a>
+        <a href="<?= site_url('Commander/Paiement/')?>" class="btn btn-success btn-lg text-center"> Validez votre commande</a>
     </div>
 </div>
 <br>
