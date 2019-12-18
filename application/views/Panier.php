@@ -3,7 +3,7 @@
         <?php if (count($panier) != 0) { ?>
             <h1 style="text-align: left">Contenu de votre Panier.php</h1>
         <?php } else { ?>
-            <h1 style="text-align: left">Votre panier est vide <span style='font-size:50px;'>&#128532;</span>  </h1>
+            <h1 style="text-align: left">Votre panier est vide <span style='font-size:50px;'>&#128532;</span> </h1>
         <?php } ?>
     </div>
     <div class="col-12 col-md-3 col-lg-2">
@@ -20,7 +20,7 @@
 <?php foreach ($panier as $ligne) : ?>
     <div class="row">
         <div class="col-3">
-            <img class="img-thumbnail" src="<?= base_url("assets/images/") . $ligne["element"]["pro_photo"] ?>">
+            <img class="img-thumbnail img-panier" src="<?= base_url("assets/images/") . $ligne["element"]["pro_photo"] ?>">
         </div>
         <div class="col-9">
             <div class="row">
@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="col-4">
-                    <h5>Sous-total ligne: <?= number_format($ligne["element"]["pro_prix_achat"] * $ligne["qty"], 2, ',', ' ') ?> €</h5>
+                    <h5>Sous-total ligne : <?= number_format($ligne["element"]["pro_prix_achat"] * $ligne["qty"], 2, ',', ' ') ?> €</h5>
                 </div>
             </div>
 
@@ -60,6 +60,13 @@
         </div>
     </div>
     <br>
-
-
 <?php endforeach; ?>
+<div class="row">
+    <div class="col-12">
+        <h4 class="text-right"> Total de votre commande : <?= number_format($this->basket->get_price_sum("pro_prix_achat"), 2, ',', ' ') ?> € </h4>
+    </div>
+    <div class="col-12 text-center">
+        <a href="" class="btn btn-success btn-lg text-center"> Validez votre commande</a>
+    </div>
+</div>
+<br>

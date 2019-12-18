@@ -18,14 +18,7 @@ class Panier extends CI_controller {
         
         redirect(site_url("Panier/Pan"));
 
-        
-        // if ($produit == 1) {
-        //     redirect(site_url("Produit/Pro3/".$produit->pro_id));
-        // } else { 
-        //     redirect(site_url('Produit/pro2/').$produit->pro_rub_id);
-        // } 
-
-        
+             
 
     }
 
@@ -96,5 +89,19 @@ class Panier extends CI_controller {
         redirect(site_url("Panier/Pan"));
 
     }
+
+    
+    public function ValiderPanier () {
+
+        $data["panier"] = $this->basket->get_basket();
+
+
+        $this->load->view("header.php");
+        $this->load->view("Panier.php", $data);
+        $this->load->view("footer.php");
+
+    }
+
+
 }
 ?>

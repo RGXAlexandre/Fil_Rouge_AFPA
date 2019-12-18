@@ -112,3 +112,17 @@ legend {
         overflow-x: hidden;
     }
 }
+
+.text-right {
+    text-align: right;
+    margin: 20px;
+}
+
+
+/* .text-center {
+    text-align: center;
+} */
+
+.img-panier {
+    width: 90%;
+}
