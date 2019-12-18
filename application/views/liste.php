@@ -3,7 +3,10 @@
         <h2 style="float:left">Liste de nos produits</h2>
 
         <!-- Ajout d'un bouton pour permettre aux Admin du site d'ajouter un produit. -->
-        <a href="<?= site_url('Produit/Ajo/') ?>" class="btn btn-warning" role="button" aria-pressed="true" style="float:right" class="cache">Ajouter un produit</a>
+        <?php if ($this->auth->is_type('employé')) : ?>
+            <a href="<?= site_url('Produit/Ajo/') ?>" class="btn btn-warning" role="button" aria-pressed="true" style="float:right" class="cache">Ajouter un produit</a>
+        <?php endif; ?>
+
     </div>
 </div>
 <br>

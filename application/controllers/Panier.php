@@ -112,6 +112,18 @@ class Panier extends CI_controller {
 
     }
 
+    public function EspacePerso () {
+
+        $requete = $this->db->query("select * from client where cli_mail=?",array($this->auth->get_login()));
+        $data["client"] = $requete->row();
+
+
+        $this->load->view("header.php");
+        $this->load->view("EspacePerso.php", $data);
+        $this->load->view("footer.php");
+
+    }
+
 
 }
 ?>

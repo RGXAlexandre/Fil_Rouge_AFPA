@@ -11,4 +11,11 @@ class Accueil extends CI_controller {
         $this->load->view("accueil.php", $data);
         $this->load->view("footer.php");
     }
+
+    public function Perdu () {
+
+        $this->load->view("header.php");
+        $this->load->view("nelson.php");
+        $this->load->view("footer.php");
+    }
 }

@@ -10,13 +10,12 @@ $config['auth'] = [
               'login'     =>  'cli_mail',
               'password'  =>  'cli_password',
               'encoding'  =>  'plaintext'
-
           ], 
           'employé' => [
               'table'     =>  'employé',
               'login'     =>  'emp_mail',
               'password'  =>  'emp_password',
-              'encoding'  =>  'bcrypt'
+              'encoding'  =>  'plaintext'
           ]
      ];
 

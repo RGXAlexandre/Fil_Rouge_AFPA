@@ -31,12 +31,18 @@
             <!-- <p> <?= count($produits) ?> </p> -->
 
             <!-- Ajout d'un bouton pour permettre aux Admin du site de modifier le produit affiché -->
-            <a href="<?= site_url('Produit/Mod/') . $ligne->pro_id ?>" class="btn btn-warning" role="button" class="cache">Modifier </a>
+            <?php if ($this->auth->is_type('employé')) : ?>
+                <a href="<?= site_url('Produit/Mod/') . $ligne->pro_id ?>" class="btn btn-warning" role="button" class="cache">Modifier </a>
+            <?php endif; ?>
 
             <!-- Ajout d'un bouton pour permettre aux Admin du site de supprimer le produit affiché -->
-            <a href="<?= site_url('Produit/Sup/') . $ligne->pro_id ?>" class="btn btn-danger" class="cache"> Supprimer </a>
+            <?php if ($this->auth->is_type('employé')) : ?>
+                <a href="<?= site_url('Produit/Sup/') . $ligne->pro_id ?>" class="btn btn-danger" class="cache"> Supprimer </a>
+            <?php endif; ?>
+            
         </div>
     </div>
     <br>
 
 <?php } ?>
+

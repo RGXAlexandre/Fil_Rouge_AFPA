@@ -58,7 +58,11 @@
                             </li>
                             <li class="nav-item">
                                 <!-- Positionnement de data-toggle="modal" et  data-target="#myModal"dans le lien pour creer le point de depart de la Modal -->
-                                <a class="nav-link" href="" data-toggle="modal" data-target="#myModal">Espace Client</a>
+                                <?php if ($this->auth->is_type('employé')) : ?>
+                                    <a class="nav-link" href="" data-toggle="modal" data-target="#myModal">Espace Employé</a>
+                                <?php else : ?>
+                                    <a class="nav-link" href="" data-toggle="modal" data-target="#myModal">Espace Client</a>
+                                <?php endif; ?>
 
                                 <!-- !! Gestion de la vue en fonction du status du login !! -->
                                 <!-- Si un client est connecté, affichage d'un Modal avec uniquement un bouton de déconnexion -->
@@ -71,11 +75,17 @@
                                             <div class="modal-content">
                                                 <!-- En-tete de la fenetre Modal -->
                                                 <div class="modal-header">
-                                                    <h4 class="modal-title">Espace Client</h4>
+                                                    <?php if ($this->auth->is_type('employé')) : ?>
+                                                        <h4 class="modal-title">Espace Employé</h4>
+                                                    <?php else : ?>
+                                                        <h4 class="modal-title">Espace Client</h4>
+                                                    <?php endif; ?>
+
                                                 </div>
                                                 <!-- Corps de la fenetre Modal. 1ere moitiée -->
                                                 <div class="modal-body">
                                                     <div class="popForm popLeft">
+                                                        <a href=<?= site_url("Panier/EspacePerso") ?> class="btn btn-secondary btn-sm">Espace Personnel</a>
                                                         <a href=<?= site_url("Connexion/logout") ?> class="btn btn-secondary btn-sm">Se déconnecter</a>
                                                         <br>
                                                     </div>
@@ -156,7 +166,8 @@
                             <!-- TODO: Ajuster la couleur en fonction du nbr d'artcile dans le panier. -->
                             <span>
                                 <a href="<?= site_url("Panier/Pan"); ?>"><img src="/Fil_Rouge_AFPA/annexe/Charte/HEADER/picto_panier.png" alt="LogoPanier" id="LogoPanier" class="superpose"></a>
-                                <a href="<?= site_url("Panier/Pan"); ?>"><div class="badge pulsate"><?= $this->basket->get_quantity_sum() ?></div>
+                                <a href="<?= site_url("Panier/Pan"); ?>">
+                                    <div class="badge pulsate"><?= $this->basket->get_quantity_sum() ?></div>
                             </span>
 
 
