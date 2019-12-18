@@ -152,10 +152,15 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="<?php echo site_url("Panier/Pan"); ?>">Panier</a>
                             </li>
-                            <!-- Positinnement d'un bouton cliquable en forme de panier, renvoyant sur controleur /Panier/Pan -->
-                            <li>
+                            <!-- Positionnement d'un bouton cliquable en forme de panier, renvoyant sur controleur /Panier/Pan, et d'un Badge Bootstrap pour le comptage du nbr d'article. -->
+                            <!-- TODO: Ajuster la couleur en fonction du nbr d'artcile dans le panier. -->
+                            <span>
                                 <a href="<?= site_url("Panier/Pan"); ?>"><img src="/Fil_Rouge_AFPA/annexe/Charte/HEADER/picto_panier.png" alt="LogoPanier" id="LogoPanier" class="superpose"></a>
-                            </li>
+                                <a href="<?= site_url("Panier/Pan"); ?>"><div class="badge pulsate"><?= $this->basket->get_quantity_sum() ?></div>
+                            </span>
+
+
+
 
                         </ul>
                     </div>
