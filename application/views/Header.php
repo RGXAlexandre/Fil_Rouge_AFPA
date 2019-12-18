@@ -85,6 +85,7 @@
                                                 <!-- Corps de la fenetre Modal. 1ere moitiée -->
                                                 <div class="modal-body">
                                                     <div class="popForm popLeft">
+                                                        <a href=<?= site_url("Panier/EspacePerso") ?> class="btn btn-secondary btn-sm">Espace Personnel</a>
                                                         <a href=<?= site_url("Connexion/logout") ?> class="btn btn-secondary btn-sm">Se déconnecter</a>
                                                         <br>
                                                     </div>
