@@ -8,7 +8,9 @@ $config['auth'] = [
           'client' => [
               'table'     =>  'client',
               'login'     =>  'cli_mail',
-              'password'  =>  'cli_password'
+              'password'  =>  'cli_password',
+              'encoding'  =>  'plaintext'
+
           ], 
           'employé' => [
               'table'     =>  'employé',

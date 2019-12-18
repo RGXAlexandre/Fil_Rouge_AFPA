@@ -1,8 +1,11 @@
 <?php
 class Panier extends CI_controller {
 
+    
+
     public function Ajout ($id) {
 
+        
         $produit = $this->db->query("select * from produit where pro_id=?", $id)->row();
         
         $data = [
@@ -18,12 +21,14 @@ class Panier extends CI_controller {
         
         redirect(site_url("Panier/Pan"));
 
+
              
 
     }
 
     public function AjoutUn ($id) {
 
+        
         $produit = $this->db->query("select * from produit where pro_id=?", $id)->row();
 
         $data = [
@@ -42,7 +47,7 @@ class Panier extends CI_controller {
 
     public function RetraitUn ($id) {
 
-        
+                
         foreach ($this->basket->get_basket() as $value) {
             if ($value["element"]["pro_id"] == $id) {
                 $this->basket->edit_quantity($value["element"],$value["qty"]-1);
@@ -56,6 +61,11 @@ class Panier extends CI_controller {
 
 
     public function Pan () {
+
+        $requete = $this->db->query("select * from client where cli_mail=?",array($this->auth->get_login()));
+        $data["client"] = $requete->row();
+
+
 
         $data["panier"] = $this->basket->get_basket();
 

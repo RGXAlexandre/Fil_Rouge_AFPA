@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-12 col-md-9 col-lg-10">
         <?php if (count($panier) != 0) { ?>
-            <h1 style="text-align: left">Contenu de votre Panier.php</h1>
+            <h1 style="text-align: left">Contenu de votre Panier</h1>
         <?php } else { ?>
             <h1 style="text-align: left">Votre panier est vide <span style='font-size:50px;'>&#128532;</span> </h1>
         <?php } ?>
@@ -42,7 +42,11 @@
 
             <div class="row">
                 <div class="col-4">
-                    <h5>Prix unitaire: <?= number_format($ligne["element"]["pro_prix_achat"], 2, ',', ' ') ?> €</h5>
+                    <?php if ($this->auth->is_logged()) : ?>
+                        <p class="card-text">Prix unitaire HT : <?= number_format($ligne["element"]["pro_prix_achat"] * $client->cli_coefficient, 2, ',', ' ') ?> €</p>
+                    <?php else : ?>
+                        <p class="card-text">Prix unitaire HT : <?= number_format($ligne["element"]["pro_prix_achat"] * 3, 2, ',', ' ') ?> €</p>
+                    <?php endif; ?>
                 </div>
                 <div class="col-4">
                     <div class="btn-group" role="group" aria-label="Basic example">
@@ -52,7 +56,12 @@
                     </div>
                 </div>
                 <div class="col-4">
-                    <h5>Sous-total ligne : <?= number_format($ligne["element"]["pro_prix_achat"] * $ligne["qty"], 2, ',', ' ') ?> €</h5>
+
+                    <?php if ($this->auth->is_logged()) : ?>
+                        <p class="card-text">Sous-total ligne HT : <?= number_format($ligne["element"]["pro_prix_achat"] * $client->cli_coefficient * $ligne["qty"], 2, ',', ' ') ?> €</p>
+                    <?php else : ?>
+                        <p class="card-text">Sous-total ligne HT : <?= number_format($ligne["element"]["pro_prix_achat"] * 3 * $ligne["qty"], 2, ',', ' ') ?> €</p>
+                    <?php endif; ?>
                 </div>
             </div>
 
@@ -63,12 +72,20 @@
 <?php endforeach; ?>
 <div class="row">
     <div class="col-12">
-        <?php if($this->basket->get_price_sum("pro_prix_achat")>0) {?>
-        <h4 class="text-right"> Total de votre commande : <?= number_format($this->basket->get_price_sum("pro_prix_achat"), 2, ',', ' ') ?> € </h4>
-        <?php }?>
+        <?php if ($this->basket->get_price_sum("pro_prix_achat") > 0) { ?>
+            <?php if ($this->auth->is_logged()) : ?>
+                <h5 class="text-right">Sous-total ligne HT : <?= number_format($this->basket->get_price_sum("pro_prix_achat") * $client->cli_coefficient, 2, ',', ' ') ?> €</h5>
+                <h5 class="text-right">TVA (20%) : <?= number_format($this->basket->get_price_sum("pro_prix_achat") * $client->cli_coefficient * 0.2, 2, ',', ' ') ?> €</h5>
+                <h4 class="text-right">Total ligne TTC : <?= number_format($this->basket->get_price_sum("pro_prix_achat") * $client->cli_coefficient*1.2, 2, ',', ' ') ?> €</h4>
+            <?php else : ?>
+                <h5 class="text-right">Sous-total ligne HT : <?= number_format($this->basket->get_price_sum("pro_prix_achat") * 3, 2, ',', ' ') ?> €</h5>
+                <h5 class="text-right">TVA (20%) : <?= number_format($this->basket->get_price_sum("pro_prix_achat") * 0.6, 2, ',', ' ') ?> €</h5>
+                <h4 class="text-right">Total ligne TTC : <?= number_format($this->basket->get_price_sum("pro_prix_achat") * 3.6, 2, ',', ' ') ?> €</h4>
+            <?php endif; ?> 
+        <?php } ?>
     </div>
     <div class="col-12 text-center">
-        <a href="<?= site_url('Commander/Paiement/')?>" class="btn btn-success btn-lg text-center"> Validez votre commande</a>
+        <a href="<?= site_url('Commander/Paiement/') ?>" class="btn btn-success btn-lg text-center"> Validez votre commande</a>
     </div>
 </div>
 <br>

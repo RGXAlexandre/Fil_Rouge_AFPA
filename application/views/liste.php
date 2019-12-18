@@ -19,7 +19,11 @@
                 <!-- lien de l'image via base_url et le chemin du dossier -->
                 <img class="card-img-top h155" src="<?= base_url("assets/images/") . $ligne->pro_photo ?>" alt="<?= $ligne->pro_photo ?>">
                 <div class="card-body">
-                    <p class="card-text">Prix : <?= number_format($ligne->pro_prix_achat, 2, ',', ' ') ?> €</p>
+                    <?php if ($this->auth->is_logged()) : ?>
+                        <p class="card-text">Prix : <?= number_format($ligne->pro_prix_achat * $client->cli_coefficient, 2, ',', ' ') ?> €</p>
+                    <?php else : ?>
+                        <p class="card-text">Prix : <?= number_format($ligne->pro_prix_achat * 3, 2, ',', ' ') ?> €</p>
+                    <?php endif; ?>
                 </div>
                 <!--  lien pour accéder au détail d'un produit grâce à l'id du produit -->
                 <div class="card-footer text-center">

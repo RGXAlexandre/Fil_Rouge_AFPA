@@ -4,6 +4,9 @@ class Produit extends CI_controller {
     // méthode pour afficher la liste de tous les produits de la BDD
     public function Pro () {
 
+        $requete = $this->db->query("select * from client where cli_mail=?",array($this->auth->get_login()));
+        $data["client"] = $requete->row();
+
         //  je récupère sous forme de tableau la liste des produits
         $requete = $this->db->query("select * from produit");
         $data["produits"] = $requete->result();
@@ -20,6 +23,9 @@ class Produit extends CI_controller {
     // méthode pour afficher la liste de tous les produits d'une sous-rubrique
     public function Pro2 ($id) {
 
+        $requete = $this->db->query("select * from client where cli_mail=?",array($this->auth->get_login()));
+        $data["client"] = $requete->row();
+
         $requete = $this->db->query("select * from produit JOIN rubrique  ON rub_id=pro_rub_id where pro_rub_id = ?", array($id));
         $data["produits"] = $requete->result();
         
@@ -31,6 +37,9 @@ class Produit extends CI_controller {
 
     // méthode pour afficher le détail d'un produit
     public function Pro3 ($id) {
+
+        $requete = $this->db->query("select * from client where cli_mail=?",array($this->auth->get_login()));
+        $data["client"] = $requete->row();
 
         $requete = $this->db->query("select * from produit where pro_id = ?", array($id));
         $data["produits"] = $requete->result();
