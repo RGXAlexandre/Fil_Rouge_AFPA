@@ -111,7 +111,7 @@ class Produit extends CI_controller {
 
         // on récupère toutes les informations existantes du produit que l'on souhaite modifiés
         // Protection de la page : accessible pour le groupe employé uniquement
-        // $this->auth->authorized(["employé"], "aut/login");
+        $this->auth->authorized(["employé"], "accueil/Perdu");
 
         $requete = $this->db->query("select * from produit join rubrique ON pro_rub_id=rub_id join fournisseur ON pro_fou_id=fou_id where pro_id=?", array($id));
         $data["produit"] = $requete->row();

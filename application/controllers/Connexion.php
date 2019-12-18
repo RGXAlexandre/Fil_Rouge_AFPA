@@ -13,7 +13,7 @@ class Connexion extends CI_controller
             if ($this->auth->login($e, $p, "client")) {
                 redirect(site_url("Accueil/Acc"));
             } else {
-                redirect(site_url("Aide/Aid"));
+                redirect(site_url("Accueil/Perdu"));
             }
         }
     }
