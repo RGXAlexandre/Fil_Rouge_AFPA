@@ -1,3 +1,4 @@
+<!-- TODO: A COMMENTER -->
 <div class="row">
     <div class="col-12 col-md-9 col-lg-10">
         <?php if (count($panier) != 0) { ?>
@@ -87,6 +88,14 @@
             <?php endif; ?>
         <?php } ?>
     </div>
+
+</div>
+<div class="center">
+    <?php if ($this->auth->is_logged()) : ?>
+        
+    <?php else : ?> 
+        <a class="btn btn-success btn-lg text-center" href="" data-toggle="modal" data-target="#myModal">Inscription</a>
+    <?php endif; ?>
 
 </div>
 <br>

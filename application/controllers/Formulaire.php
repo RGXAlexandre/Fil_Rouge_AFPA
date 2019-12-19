@@ -15,14 +15,14 @@ class Formulaire extends CI_controller {
         $this->form_validation->set_rules('cli_telephone', 'téléphone',  'required|regex_match[/^[0-9]{10,}$/]');
         $this->form_validation->set_rules('cli_password', 'password',  'required|regex_match[/^[a-zA-Z0-9\'-àéèêâûùë!?:&]{1,50}$/]');
 
-
+        //---------------------------------------------------------------------------------------------- 
         // autre méthode pouvant gerer la longueur min/max ainsi que le caractère unique (is_unique)
         // $this->form_validation->set_rules(
         // 	'artist_name', 
         // 	'Le nom de l\'artiste',
         // 	'required|min_length[5]|max_length[12]|is_unique[artist.artist_name]',
-
         // );
+        //---------------------------------------------------------------------------------------------- 
 
         if ($this->input->post() && $this->form_validation->run()) {
 
@@ -61,6 +61,3 @@ class Formulaire extends CI_controller {
         }
     }
 }
-
-?>   
-

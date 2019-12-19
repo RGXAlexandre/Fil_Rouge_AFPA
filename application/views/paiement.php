@@ -1,6 +1,5 @@
 
 <!-- formulaire de validation de commande pour pré-remplir la table commande avec l'adresse de facturation et livraison pré-rempli en fonction du client -->
-<!-- TODO: réglé action qui renvoi à une fonction PHP pour insérer la table commande et la table posséder avec une transaction (cf. formulaire d'inscription) -->
 <form action="<?= site_url('Commander/Paiement') ?>" form="form-group" enctype="multipart/form-data" method="POST">
     <div class="row">
         <div class="col-12 text-center">

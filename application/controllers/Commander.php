@@ -5,7 +5,8 @@ class Commander extends CI_controller
     public function Paiement()
     {
 
-        // TODO: gérer l'accès uniquement si connecté
+        // Protection de la page : accessible pour le groupe employé uniquement
+        $this->auth->authorized(["client"], "accueil/Perdu");
 
         // requête pour récupérer toutes les informations du client
         $requete = $this->db->query("select * from client where cli_mail=?", array($this->auth->get_login()));
@@ -43,7 +44,8 @@ class Commander extends CI_controller
                 'com_total_HT' => $this->basket->get_price_sum("pro_prix_achat") * $data['client']->cli_coefficient * 1.2,
                 'com_etat' => "en préparation",
                 'com_livraison_avancement' => "à livrer",
-                'com_facture_numero' => "34",
+                // TODO: fixer le com_facture_numero 
+                'com_facture_numero' => "37",
                 'com_paiement_date' => date('Y-m-d H:i:s'),
                 'com_facture_date' =>  date('Y-m-d H:i:s'),
                 // attention à la syntaxe pour appeler une donnée récupéré en interne
@@ -78,9 +80,7 @@ class Commander extends CI_controller
             $this->load->view("footer.php");
         }
 
-        // $this->load->view("header.php");
-        // $this->load->view("Paiement.php", $data);
-        // $this->load->view("footer.php");            
+                 
 
     }
 }

@@ -1,7 +1,3 @@
-<h2>Echec de login</h2>
-Redirection normal en cas d'echec de login.
-<br>
-<hr>
 <h2>Oubli de mot de passe </h2>
 Redirection parfaitement normale et voulue (et potentiellement définitive) en cas d'oubli de mot de passe.
 <br>

@@ -17,7 +17,7 @@
             Libelle long <input class="form-control" type="text" name="pro_libelle_long" placeholder="Entrez une description du produit">
         </div>
 
-        <!-- TODO arriver à choisir la rubrique qui personnalise le select sous rubrique... -->
+
 
         <!-- on affiche la liste des sous rubriques graçe à la requete dans la méthode add du controleur produit -->
         <div class="col-12">

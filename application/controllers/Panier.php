@@ -1,3 +1,4 @@
+<!-- TODO: A COMMENTER -->
 <?php
 class Panier extends CI_controller
 {
@@ -115,6 +116,9 @@ class Panier extends CI_controller
 
         $requete = $this->db->query("select * from client where cli_mail=?", array($this->auth->get_login()));
         $data["client"] = $requete->row();
+
+        $requete = $this->db->query("select * from employé where emp_mail=?", array($this->auth->get_login()));
+        $data["employé"] = $requete->row();
 
         $requete1 = $this->db->query("select * from commande JOIN client on com_cli_id=cli_id WHERE cli_mail=?", array($this->auth->get_login()));
         $data["commandes"] = $requete1->result();

@@ -1,5 +1,9 @@
 <h2>Bonjour <?= $client->cli_prenom ?>, et bienvenue sur votre espace personnel.</h2>
+<span>
+    <!-- TODO A COMMENTER -->
 <div>Vous trouverez ci-dessous votre détail de commande.</div>
+<a href="<?= site_url('Panier/EspacePerso') ?>" class="btn btn-secondary" role="button" aria-pressed="true" style="float:right" class="cache">Retour</a>
+</span>
 
 <table class="table table-bordered ">
     <thead>

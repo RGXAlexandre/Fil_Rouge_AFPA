@@ -2,7 +2,6 @@
 <html lang="fr">
 
 <head>
-    <!-- TEST MO -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -85,7 +84,11 @@
                                                 <!-- Corps de la fenetre Modal. 1ere moitiée -->
                                                 <div class="modal-body">
                                                     <div class="popForm popLeft">
-                                                        <a href=<?= site_url("Panier/EspacePerso") ?> class="btn btn-secondary btn-sm">Espace Personnel</a>
+                                                        <?php if ($this->auth->is_type('employé')) : ?>
+                                                            <a href=<?= site_url("Panier/EspacePerso") ?> class="btn btn-secondary btn-sm">Espace Employé</a>
+                                                        <?php else : ?>
+                                                            <a href=<?= site_url("Panier/EspacePerso") ?> class="btn btn-secondary btn-sm">Espace Personnel</a>
+                                                        <?php endif; ?>
                                                         <a href=<?= site_url("Connexion/logout") ?> class="btn btn-secondary btn-sm">Se déconnecter</a>
                                                         <br>
                                                     </div>
@@ -206,7 +209,7 @@
 
                         <ul class="navbar-nav ">
                             <li class="nav-item">
-                                <a class="nav-link" href="<?= site_url('Categories/Cat2/') . 1 ?>">Les vents <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="<?= site_url('Categories/Cat2/') . 1 ?>">Les Vents <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= site_url('Categories/Cat2/') . 2 ?>">Les Guitares <span class="sr-only">(current)</span></a>
