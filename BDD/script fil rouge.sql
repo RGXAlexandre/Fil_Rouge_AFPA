@@ -381,6 +381,11 @@ JOIN commande ON com_id=pos_com_id
 JOIN `CLIENT` ON cli_id=com_cli_id
 SET pos_sous_total_HT=pos_quantite_commandee*pro_prix_achat*com_reduction*cli_coefficient;
 
+
+UPDATE posseder
+SET pos_prix_vente=pos_sous_total_HT/pos_quantite_commandee;
+
+
 -- tentative MAJ com_total_HT réussie
 
 UPDATE commande
@@ -604,3 +609,4 @@ WHERE pos_quantite_commandee>con_liv_quantite_BL;
 
 
 
+com_livraison_avancement

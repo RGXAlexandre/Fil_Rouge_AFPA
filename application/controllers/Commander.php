@@ -1,14 +1,14 @@
 <?php
-class Commander extends CI_controller {
+class Commander extends CI_controller
+{
 
-    public function Paiement () {
+    public function Paiement()
+    {
 
         // TODO: gérer l'accès uniquement si connecté
 
         // requête pour récupérer toutes les informations du client
-        // TODO: récupérer l'id de l'utilisateur connecté 
-        $requete = $this->db->query("select * from client where cli_mail=?",array($this->auth->get_login()));
-
+        $requete = $this->db->query("select * from client where cli_mail=?", array($this->auth->get_login()));
         $data["client"] = $requete->row();
 
         $this->form_validation->set_rules('com_livraison_rue', 'adresse',  'required|regex_match[/^[a-zA-Z0-9\'-àéèêâûùë ]{1,50}$/]');
@@ -25,11 +25,8 @@ class Commander extends CI_controller {
         // if ($this->input->post() && $this->form_validation->run()) {
         if ($this->input->post()) {
 
-
             // permet l'affichage de toutes les tâches effectuées
             $this->output->enable_profiler(TRUE);
-
-            
 
             // création d'un tableau avec tous les champs à insérer dans la table client 
             $commande = array(
@@ -42,33 +39,45 @@ class Commander extends CI_controller {
                 'com_facture_ville' => htmlentities($this->input->post('com_facture_ville')),
                 'com_facture_pays' => htmlentities($this->input->post('com_facture_pays')),
                 'com_date' => date('Y-m-d H:i:s'),
-                'com_total_HT' => $this->basket->get_price_sum("pro_prix_achat"),
+                'com_total_HT' => $this->basket->get_price_sum("pro_prix_achat") * $data['client']->cli_coefficient,
+                'com_total_HT' => $this->basket->get_price_sum("pro_prix_achat") * $data['client']->cli_coefficient * 1.2,
                 'com_etat' => "en préparation",
                 'com_livraison_avancement' => "à livrer",
-                'com_facture_numero' => "32",
+                'com_facture_numero' => "34",
                 'com_paiement_date' => date('Y-m-d H:i:s'),
                 'com_facture_date' =>  date('Y-m-d H:i:s'),
+                // attention à la syntaxe pour appeler une donnée récupéré en interne
                 'com_cli_id' => $data['client']->cli_id,
-            ) ;
+            );
 
             // afin d'insérer une ligne dans la table disque et de récupérer l'id de l'insert on ouvre une transaction
             $this->db->trans_start();
             $this->db->insert("commande", $commande);
-            // $id = $this->db->insert_id();
-
-
+            $id = $this->db->insert_id();
+            $panier_contenu = $this->basket->get_basket();
+            foreach ($panier_contenu as $ligne) :
+                $posseder = array(
+                    'pos_pro_id' => $ligne["element"]["pro_id"],
+                    'pos_com_id' => $id,
+                    'pos_quantite_commandee' => $ligne["qty"],
+                    'pos_prix_achat' => $ligne["element"]["pro_prix_achat"],
+                    'pos_prix_vente' => $ligne["element"]["pro_prix_achat"]* $data['client']->cli_coefficient,
+                    'pos_sous_total_HT' => $ligne["element"]["pro_prix_achat"]* $data['client']->cli_coefficient * $ligne["qty"],
+                );
+                $this->db->insert("posseder", $posseder);
+            endforeach;
             $this->db->trans_complete();
 
-            $this->basket->clean();
 
+            $this->basket->clean();
             redirect(site_url("Accueil/Acc"));
         } else {
-        
+
             $this->load->view("header.php");
             $this->load->view("Paiement.php", $data);
-            $this->load->view("footer.php");   
+            $this->load->view("footer.php");
         }
-        
+
         // $this->load->view("header.php");
         // $this->load->view("Paiement.php", $data);
         // $this->load->view("footer.php");            
