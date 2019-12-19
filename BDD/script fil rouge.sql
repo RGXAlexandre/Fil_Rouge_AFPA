@@ -609,4 +609,3 @@ WHERE pos_quantite_commandee>con_liv_quantite_BL;
 
 
 
-com_livraison_avancement

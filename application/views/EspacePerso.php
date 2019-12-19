@@ -1,7 +1,10 @@
 <!-- TODO A COMMENTER -->
 <?php if ($this->auth->is_type('client')) : ?>
     <h2>Bonjour <?= $client->cli_prenom ?>, et bienvenue sur votre espace personnel.</h2>
-    <div>Vous trouverez ci-dessous votre historique de commande</div>
+    <hr>
+    
+    <strong>Vous trouverez ci-dessous votre historique de commande</strong>
+    <hr>
 
 
 

@@ -1,10 +1,9 @@
-<h2>Bonjour <?= $client->cli_prenom ?>, et bienvenue sur votre espace personnel.</h2>
+<!-- TODO A COMMENTER -->
 <span>
-    <!-- TODO A COMMENTER -->
-<div>Vous trouverez ci-dessous votre détail de commande.</div>
-<a href="<?= site_url('Panier/EspacePerso') ?>" class="btn btn-secondary" role="button" aria-pressed="true" style="float:right" class="cache">Retour</a>
+    <strong><?= $client->cli_prenom ?>, voici le détail de votre commande.</strong>
+    <a href="<?= site_url('Panier/EspacePerso') ?>" class="btn btn-secondary" role="button" aria-pressed="true" style="float:right" class="cache">Retour</a>
 </span>
-
+<hr>
 <table class="table table-bordered ">
     <thead>
         <tr>
@@ -12,7 +11,7 @@
             <th scope="col">Quantité</th>
             <th scope="col">Nom de l'article</th>
             <th scope="col">Prix unitaire</th>
-            <th scope="col">Prix HT</th>
+            <th scope="col">Total HT</th>
 
         </tr>
     </thead>
@@ -22,7 +21,7 @@
                 <td><?= $ligne->pos_com_id ?></td>
                 <td><?= number_format($ligne->pos_quantite_commandee, 0) ?></td>
                 <td><?= $ligne->pro_libelle_court ?></td>
-                <td><?= $ligne->pos_prix_vente ?></td>
+                <td><?= $ligne->pos_prix_vente ?> €</td>
                 <td><?= $ligne->pos_sous_total_HT ?> €</td>
 
                 <!-- <td><?= number_format($commande->com_total_HT * 1.20, 2, ',', ' ') ?> €</td> -->
