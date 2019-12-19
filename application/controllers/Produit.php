@@ -1,51 +1,57 @@
 <?php
 class Produit extends CI_controller {
 
+    
+    private $data;
+
+    private function get_login(){
+        $requete = $this->db->query("select * from client where cli_mail=?",array($this->auth->get_login()));
+        $this->data["client"] = $requete->row();
+
+        return $this->data;
+    }
+
+    public function __construct() {
+        parent::__construct();
+        $this->data = $this->get_login();
+    }
+
     // méthode pour afficher la liste de tous les produits de la BDD
     public function Pro () {
 
-        $requete = $this->db->query("select * from client where cli_mail=?",array($this->auth->get_login()));
-        $data["client"] = $requete->row();
-
         //  je récupère sous forme de tableau la liste des produits
         $requete = $this->db->query("select * from produit");
-        $data["produits"] = $requete->result();
+        $this->data["produits"] = $requete->result();
 
         // $requete = $this->db->query("select rub_id_1 from rubrique where rub_id = ?", array($id));
-        // $data["rubrique"] = $requete->row();
+        // $this->data["rubrique"] = $requete->row();
 
         // ATTENTION à bien insérer le tableau pour le chargement de la vue liste.php !!!
         $this->load->view("header.php");
-        $this->load->view("liste.php", $data);
+        $this->load->view("liste.php", $this->data);
         $this->load->view("footer.php");
     }
 
     // méthode pour afficher la liste de tous les produits d'une sous-rubrique
     public function Pro2 ($id) {
 
-        $requete = $this->db->query("select * from client where cli_mail=?",array($this->auth->get_login()));
-        $data["client"] = $requete->row();
-
         $requete = $this->db->query("select * from produit JOIN rubrique  ON rub_id=pro_rub_id where pro_rub_id = ?", array($id));
-        $data["produits"] = $requete->result();
+        $this->data["produits"] = $requete->result();
         
         // ATTENTION à bien insérer le tableau pour le chargement de la vue liste.php !!!
         $this->load->view("header.php");
-        $this->load->view("produit.php", $data);
+        $this->load->view("produit.php", $this->data);
         $this->load->view("footer.php");
     }
 
     // méthode pour afficher le détail d'un produit
     public function Pro3 ($id) {
 
-        $requete = $this->db->query("select * from client where cli_mail=?",array($this->auth->get_login()));
-        $data["client"] = $requete->row();
-
         $requete = $this->db->query("select * from produit where pro_id = ?", array($id));
-        $data["produits"] = $requete->result();
+        $this->data["produits"] = $requete->result();
 
         $this->load->view("header.php");
-        $this->load->view("produit.php", $data);
+        $this->load->view("produit.php", $this->data);
         $this->load->view("footer.php");
     }
 
@@ -56,10 +62,10 @@ class Produit extends CI_controller {
         
         // requete SQL pour les selects des rubriques et fournisseurs existants dans la vue pour afficher la liste des fournisseurs et sous rubrique existantes
         $requete = $this->db->query("select * from rubrique where rub_id_1 is not null");
-        $data["rubriques"] = $requete->result();
+        $this->data["rubriques"] = $requete->result();
 
         $requete = $this->db->query("select * from fournisseur");
-        $data["fournisseurs"] = $requete->result();
+        $this->data["fournisseurs"] = $requete->result();
 
         //  mise en place des controles des champs avec set_rules('nom du champ','nom pour l'affichage de l'erreur','conditions de vérification')
         //  penser à bien télécharger la librairies 'form_validation' et le helper 'form'
@@ -111,7 +117,7 @@ class Produit extends CI_controller {
             redirect(site_url("Produit/Pro"));
         } else {
         $this->load->view("header.php");
-        $this->load->view("Ajout.php", $data);
+        $this->load->view("Ajout.php", $this->data);
         $this->load->view("footer.php");
         }
     }
@@ -123,14 +129,14 @@ class Produit extends CI_controller {
         $this->auth->authorized(["employé"], "accueil/Perdu");
 
         $requete = $this->db->query("select * from produit join rubrique ON pro_rub_id=rub_id join fournisseur ON pro_fou_id=fou_id where pro_id=?", array($id));
-        $data["produit"] = $requete->row();
+        $this->data["produit"] = $requete->row();
 
         // on récupère la liste des fournisseurs et sous-rubriques existantes
         $requete = $this->db->query("select * from rubrique where rub_id_1 is not null");
-        $data["rubriques"] = $requete->result();
+        $this->data["rubriques"] = $requete->result();
 
         $requete = $this->db->query("select * from fournisseur");
-        $data["fournisseurs"] = $requete->result();
+        $this->data["fournisseurs"] = $requete->result();
 
 //  mise en place des controles des champs avec set_rules('nom du champ','nom pour l'affichage de l'erreur','conditions de vérification')
         //  penser à bien télécharger la librairies 'form_validation' et le helper 'form'
@@ -179,7 +185,7 @@ class Produit extends CI_controller {
         } else {
 
         $this->load->view("header.php");
-        $this->load->view("Modifier.php", $data);
+        $this->load->view("Modifier.php", $this->data);
         $this->load->view("footer.php");
         }
     }
@@ -190,7 +196,7 @@ class Produit extends CI_controller {
         // $this->auth->authorized(["employé"], "aut/login");
 
         $requete = $this->db->query("select * from produit join rubrique ON pro_rub_id=rub_id join fournisseur ON pro_fou_id=fou_id where pro_id=?", array($id));
-        $data["produit"] = $requete->row();
+        $this->data["produit"] = $requete->row();
 
         if ($this->input->post()) {
 
@@ -204,9 +210,11 @@ class Produit extends CI_controller {
         } else {
 
         $this->load->view("header.php");
-        $this->load->view("Supprimer.php",$data);
+        $this->load->view("Supprimer.php",$this->data);
         $this->load->view("footer.php");
         }
     }
+
+    
 
 }
