@@ -18,24 +18,28 @@
     <!-- Feuille de style CSS UNIQUE pour le site  -->
     <link rel="stylesheet" href="/Fil_Rouge_AFPA/assets/css/VillageGreen.css">
 
-    
+
 </head>
 
-<!-- Création d'un conteneur pour l'ensemble de la page, permettant d'appliquer un fond (Rayé noir) via "styleHeaderFooter.css"-->
+<!-- Création d'un conteneur pour l'ensemble de la page, permettant d'appliquer un fond (Rayé noir) via "VillageGreen.css"-->
 <div class="container-fluid" id="container-bordure">
 
-    <!-- Création d'un conteneur au centre de la page, permettant d'appliquer un fond (Uni "creme") via "styleHeaderFooter.css"-->
+    <!-- Création d'un conteneur au centre de la page, permettant d'appliquer un fond (Uni "creme") via "VillageGreen.css"-->
     <div class="container" id="container-centre">
+
         <!-- Création d'une ligne dans le conteneur -->
         <div class="row">
+
             <!-- Création d'une colonne largeur 2, qui va accueillir le logo -->
             <div class="col-2">
+
                 <!-- Logo de VillageGreen, cliquable -->
                 <a href="<?php echo site_url("Accueil/Acc"); ?>"><img src="/Fil_Rouge_AFPA/annexe/Charte/HEADER/logo village green.png" alt="Logo VillageGreen" id="LogoVillageGreen" class="superpose"></a>
             </div>
 
             <!-- Création d'une colonne largeur 10, qui va accueillir les Navbars -->
             <div class="col-10">
+
                 <!-- 1ere Navbars empilés sur 3, couleurs de fond, justifier à droite -->
                 <nav class="navbar navbar-light navbar-expand-lg nav justify-content-end" style="background-color: #e7e7e7;">
 
@@ -50,7 +54,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="<?php echo site_url("Accueil/Acc"); ?>">Accueil <span class="sr-only">(current)</span></a>
                             </li>
+
                             <li class="nav-item">
+
                                 <!-- Positionnement de data-toggle="modal" et  data-target="#myModal"dans le lien pour creer le point de depart de la Modal -->
                                 <?php if ($this->auth->is_type('employé')) : ?>
                                     <a class="nav-link" href="" data-toggle="modal" data-target="#myModal">Espace Employé</a>
@@ -58,9 +64,10 @@
                                     <a class="nav-link" href="" data-toggle="modal" data-target="#myModal">Espace Client</a>
                                 <?php endif; ?>
 
-                                <!-- !! Gestion de la vue en fonction du status du login !! -->
+                                <!-- !! Gestion de la vue en fonction du status du "user_type" !! -->
                                 <!-- Si un client est connecté, affichage d'un Modal avec uniquement un bouton de déconnexion -->
                                 <?php if ($this->auth->is_logged()) : ?>
+
                                     <div id="myModal" class="modal fade" role="dialog">
 
                                         <div class="modal-dialog">
@@ -74,8 +81,8 @@
                                                     <?php else : ?>
                                                         <h4 class="modal-title">Espace Client</h4>
                                                     <?php endif; ?>
-
                                                 </div>
+
                                                 <!-- Corps de la fenetre Modal. 1ere moitiée -->
                                                 <div class="modal-body">
                                                     <div class="popForm popLeft">
@@ -88,10 +95,12 @@
                                                         <br>
                                                     </div>
                                                 </div>
+
                                                 <!-- Pied de la fenetre Modal -->
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -99,6 +108,7 @@
                                     <!-- Si un client n'est pas connecté, affichage d'un Modal avec une sous modal avec un formulaire de connexion,
                                 et une sous modal avec un bouton envoyant vers le formulaire d'inscription-->
                                 <?php else : ?>
+
                                     <!-- Déclaration de la Modal -->
                                     <div id="myModal" class="modal fade" role="dialog">
 
@@ -106,10 +116,12 @@
 
                                             <!-- Contenu de la Modal-->
                                             <div class="modal-content">
+
                                                 <!-- En-tete de la fenetre Modal -->
                                                 <div class="modal-header">
                                                     <h4 class="modal-title">Espace Client</h4>
                                                 </div>
+
                                                 <!-- Corps de la fenetre Modal. 1ere moitiée -->
                                                 <div class="modal-body">
                                                     <div class="popForm popLeft">
@@ -132,19 +144,19 @@
 
                                                     </div>
                                                     <hr>
+
                                                     <!-- Corps de la fenetre. 2eme moitiée -->
                                                     <div class="popForm popRight" id="popRight">
                                                         <span>Vous n'êtes pas client chez nous ?</span>
                                                         <br>
                                                         <br>
-
                                                         <p>En tant que client Village Green, vous pouvez suivre vos envois, lire des "tests produits" exclusifs, évaluer des produits, déposer des petites annonces, gérer vos chèques-cadeaux, devenir partenaire et bien plus encore.</p>
-
                                                         <a type="button" class="btn btn-success" href="<?php echo site_url("Formulaire/For"); ?>">S'inscrire</a>
                                                         <br>
                                                         <a href="<?php echo site_url("Apropos/Apr"); ?>">Plus d'informations</a>
                                                     </div>
                                                 </div>
+
                                                 <!-- Pied de la fenetre Modal -->
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
@@ -154,8 +166,10 @@
 
                                         </div>
                                     </div>
+
                                     <!-- !! Fin de la gestion de la vue en fonction du status du login !! -->
                                 <?php endif; ?>
+
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?php echo site_url("Panier/Pan"); ?>">Panier</a>
@@ -167,9 +181,6 @@
                                 <a href="<?= site_url("Panier/Pan"); ?>">
                                     <div class="badge pulsate"><?= $this->basket->get_quantity_sum() ?></div>
                             </span>
-
-
-
 
                         </ul>
                     </div>
