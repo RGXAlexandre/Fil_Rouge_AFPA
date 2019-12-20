@@ -15,15 +15,10 @@
     <!-- Lien vers le CDN Boostrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
-    <!-- Feuille de style pour le Site -->
-    <link rel="stylesheet" href="/Fil_Rouge_AFPA/assets/css/styleSite.css">
+    <!-- Feuille de style CSS UNIQUE pour le site  -->
+    <link rel="stylesheet" href="/Fil_Rouge_AFPA/assets/css/VillageGreen.css">
 
-    <!-- Feuille de style pour le HeaderFooter -->
-    <link rel="stylesheet" href="/Fil_Rouge_AFPA/assets/css/styleHeaderFooter.css">
-
-    <!-- Feuille de style pour le delire Rodger Federer -->
-    <link rel="stylesheet" href="/Fil_Rouge_AFPA/assets/css/federer.css">
-
+    
 </head>
 
 <!-- Création d'un conteneur pour l'ensemble de la page, permettant d'appliquer un fond (Rayé noir) via "styleHeaderFooter.css"-->
@@ -165,8 +160,8 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="<?php echo site_url("Panier/Pan"); ?>">Panier</a>
                             </li>
+
                             <!-- Positionnement d'un bouton cliquable en forme de panier, renvoyant sur controleur /Panier/Pan, et d'un Badge Bootstrap pour le comptage du nbr d'article. -->
-                            <!-- TODO: Ajuster la couleur en fonction du nbr d'artcile dans le panier. -->
                             <span>
                                 <a href="<?= site_url("Panier/Pan"); ?>"><img src="/Fil_Rouge_AFPA/annexe/Charte/HEADER/picto_panier.png" alt="LogoPanier" id="LogoPanier" class="superpose"></a>
                                 <a href="<?= site_url("Panier/Pan"); ?>">
