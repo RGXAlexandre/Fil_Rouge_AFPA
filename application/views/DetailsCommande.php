@@ -1,8 +1,9 @@
-<!-- TODO A COMMENTER -->
+<!-- Affichage du prenom du client, en utilisant le tableau associatif $client, venant du controleur Panier/DetailsCommande -->
 <span>
     <strong><?= $client->cli_prenom ?>, voici le détail de votre commande.</strong>
     <a href="<?= site_url('Panier/EspacePerso') ?>" class="btn btn-secondary" role="button" aria-pressed="true" style="float:right" class="cache">Retour</a>
 </span>
+
 <hr>
 <table class="table table-bordered ">
     <thead>
@@ -16,6 +17,8 @@
         </tr>
     </thead>
     <tbody>
+    
+        <!-- Ouverture d'une boucle foreach pour parcourir le tableau associatif $ligne, venant du controleur Panier/DetailsCommande    -->
         <?php foreach ($lignes as $ligne) : ?>
             <tr>
                 <td><?= $ligne->pos_com_id ?></td>
@@ -23,11 +26,6 @@
                 <td><?= $ligne->pro_libelle_court ?></td>
                 <td><?= $ligne->pos_prix_vente ?> €</td>
                 <td><?= $ligne->pos_sous_total_HT ?> €</td>
-
-                <!-- <td><?= number_format($commande->com_total_HT * 1.20, 2, ',', ' ') ?> €</td> -->
-                <!-- <th scope="col"><a type="button" class="btn btn-info" href="<?php echo site_url("Panier/DetailsCommande/") . $commande->com_id; ?>">Détails</a></th> -->
-
-
             </tr>
         <?php endforeach; ?>
 
